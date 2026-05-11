@@ -1,129 +1,177 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ladispoli Summer Sport</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Ladispoli Summer Sport</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-    body{
-      font-family:'Montserrat',sans-serif;
-      overflow-x:hidden;
-      background:#041b45;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .hero{
-      position:relative;
-      width:100%;
-      min-height:100vh;
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            background: #041b45;
+        }
 
-      /* INSERISCI QUI LA TUA LOCANDINA */
-      background:url('image/ladispoli web1.png') center center no-repeat;
-      background-size:contain;
+        .hero {
+            position: relative;
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
+            width: 100vw;
+            height: 100vh;
 
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.15);
-    }
+            background:
+                #041b45 url("image/locandina web1.png");
 
-    .content{
-      position:relative;
-      z-index:2;
-      width:100%;
-      max-width:1400px;
-      height:100vh;
-    }
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-    /*
-      POSIZIONE CTA GUEST STAR
-      Modifica top/left per allinearla perfettamente
-      sopra la scritta presente nella locandina
-    */
+        /*
+        ======================================
+        FRECCIA GUEST STAR
+        ======================================
+        */
 
-    .gueststar-button{
-      position:absolute;
-      top:58%;
-      left:39%;
+        .guest-arrow {
+            position: absolute;
 
-      text-decoration:none;
+            /*
+            POSIZIONE FRECCIA
+            */
+            top: 58%;
+            left: 54%;
 
-      background:linear-gradient(90deg,#ff6a00,#ffb300);
-      color:white;
+            transform: translate(-50%, -50%);
 
-      padding:18px 34px;
+            width: 90px;
+            height: 90px;
 
-      border-radius:18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-      font-size:1.4rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:1px;
+            border-radius: 50%;
 
-      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+            text-decoration: none;
 
-      transition:all .3s ease;
-    }
+            z-index: 20;
 
-    .gueststar-button:hover{
-      transform:translateY(-5px) scale(1.03);
-      box-shadow:0 14px 40px rgba(0,0,0,0.45);
-    }
+            background: linear-gradient(135deg, #ff6a00, #ff9500);
 
-    @media(max-width:768px){
+            box-shadow:
+                0 0 20px rgba(255, 106, 0, .6),
+                0 0 40px rgba(255, 106, 0, .4),
+                0 15px 40px rgba(0, 0, 0, .4);
 
-      .hero{
-        background-position:center top;
-      }
+            transition: all .3s ease;
 
-      .gueststar-button{
-        top:64%;
-        left:50%;
-        transform:translateX(-50%);
-        width:85%;
-        text-align:center;
-        font-size:1rem;
-        padding:16px 20px;
-      }
+            animation: pulse 2s infinite;
+        }
 
-      .gueststar-button:hover{
-        transform:translateX(-50%) translateY(-3px);
-      }
-    }
+        .guest-arrow svg {
+            width: 42px;
+            height: 42px;
 
-  </style>
+            fill: white;
+
+            transform: rotate(180deg);
+        }
+
+        .guest-arrow:hover {
+
+            transform: translate(-50%, -50%) scale(1.15);
+
+            box-shadow:
+                0 0 30px rgba(255, 136, 0, .9),
+                0 0 60px rgba(255, 136, 0, .5),
+                0 20px 50px rgba(0, 0, 0, .5);
+        }
+
+        @keyframes pulse {
+
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.08);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /*
+        ======================================
+        MOBILE
+        ======================================
+        */
+
+        @media(max-width:768px) {
+
+            body {
+                overflow: auto;
+            }
+
+            .hero {
+
+                height: 100vh;
+
+                background-size: cover;
+                background-position: center top;
+            }
+
+            .guest-arrow {
+
+                top: 57%;
+                left: 68%;
+
+                width: 70px;
+                height: 70px;
+            }
+
+            .guest-arrow svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <section class="hero">
+    <section class="hero">
 
-    <div class="overlay"></div>
+        <!-- FRECCIA CLICCABILE -->
 
-    <div class="content">
+        <a href="gueststar.html" class="guest-arrow">
 
-      <a href="gueststar.html" class="gueststar-button">
-        Vieni a scoprire le nostre Guest Star
-      </a>
+            <!-- ICONA SVG -->
 
-    </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 
-  </section>
+                <path
+                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z" />
+
+            </svg>
+
+        </a>
+
+    </section>
 
 </body>
+
 </html>
