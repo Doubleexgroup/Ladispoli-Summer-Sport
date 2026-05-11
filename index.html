@@ -66,20 +66,48 @@
 
         /*
         =====================================
-        LOCANDINA
+        LOCANDINE
         =====================================
         */
 
-        .poster{
+        .poster-desktop,
+        .poster-mobile{
+
+            user-select:none;
+
+            pointer-events:none;
+        }
+
+        /*
+        =====================================
+        LOCANDINA DESKTOP
+        =====================================
+        */
+
+        .poster-desktop{
 
             width:100%;
             height:100%;
 
             object-fit:contain;
 
-            user-select:none;
+            display:block;
+        }
 
-            pointer-events:none;
+        /*
+        =====================================
+        LOCANDINA MOBILE
+        =====================================
+        */
+
+        .poster-mobile{
+
+            display:none;
+
+            width:100%;
+            height:100%;
+
+            object-fit:cover;
         }
 
         /*
@@ -93,7 +121,7 @@
             position:absolute;
 
             /*
-            POSIZIONE FRECCIA
+            POSIZIONE DESKTOP
             */
 
             top:61%;
@@ -205,22 +233,28 @@
         @media(max-width:768px){
 
             body{
-                overflow:auto;
+                overflow:hidden;
             }
 
-            .container{
+            /*
+            NASCONDE DESKTOP
+            */
 
-                width:100vw;
-                height:auto;
-
-                min-height:100vh;
+            .poster-desktop{
+                display:none;
             }
 
-            .poster{
+            /*
+            MOSTRA MOBILE
+            */
 
-                width:100%;
-                height:auto;
+            .poster-mobile{
+                display:block;
             }
+
+            /*
+            FRECCIA MOBILE
+            */
 
             .guest-arrow{
 
@@ -231,8 +265,8 @@
                 POSIZIONE MOBILE
                 */
 
-                top:56%;
-                left:67%;
+                top:63%;
+                left:74%;
             }
 
             .guest-arrow svg{
@@ -257,8 +291,8 @@
                 width:55px;
                 height:55px;
 
-                top:55%;
-                left:68%;
+                top:63%;
+                left:74%;
             }
 
             .guest-arrow svg{
@@ -278,14 +312,25 @@
 
         <!--
         =====================================
-        INSERISCI QUI LA TUA LOCANDINA
+        LOCANDINA DESKTOP
         =====================================
         -->
 
         <img
             src="image/ladispoli.png"
             alt="Ladispoli Summer Sport"
-            class="poster">
+            class="poster-desktop">
+
+        <!--
+        =====================================
+        LOCANDINA SMARTPHONE
+        =====================================
+        -->
+
+        <img
+            src="image/ladispoli_smartphone.png"
+            alt="Ladispoli Summer Sport Mobile"
+            class="poster-mobile">
 
         <!--
         =====================================
