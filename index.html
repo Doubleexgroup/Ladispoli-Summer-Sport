@@ -2,14 +2,22 @@
 <html lang="it">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Ladispoli Summer Sport</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- FONT -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <style>
@@ -21,18 +29,28 @@
         }
 
         body{
-            font-family:'Montserrat',sans-serif;
-            background:#041b45;
+
+            width:100vw;
+            height:100vh;
+
             overflow:hidden;
+
+            background:#041b45;
+
+            font-family:'Montserrat',sans-serif;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
         }
 
         /*
         =====================================
-        HERO
+        CONTENITORE GENERALE
         =====================================
         */
 
-        .hero{
+        .container{
 
             position:relative;
 
@@ -43,7 +61,7 @@
             align-items:center;
             justify-content:center;
 
-            background:#041b45;
+            overflow:hidden;
         }
 
         /*
@@ -54,16 +72,14 @@
 
         .poster{
 
-            position:relative;
-
             width:100%;
             height:100%;
 
-            background:url("image/ladispoli.png");
+            object-fit:contain;
 
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:contain;
+            user-select:none;
+
+            pointer-events:none;
         }
 
         /*
@@ -77,7 +93,7 @@
             position:absolute;
 
             /*
-            TUOI VALORI
+            POSIZIONE FRECCIA
             */
 
             top:61%;
@@ -90,23 +106,23 @@
 
             border-radius:50%;
 
+            background:linear-gradient(135deg,#ff6a00,#ff9800);
+
             display:flex;
             align-items:center;
             justify-content:center;
 
-            background:linear-gradient(135deg,#ff6a00,#ff9d00);
-
             text-decoration:none;
 
-            z-index:20;
+            z-index:100;
 
             box-shadow:
             0 0 20px rgba(255,106,0,.6),
             0 10px 30px rgba(0,0,0,.35);
 
-            animation:pulse 2s infinite;
+            transition:.3s ease;
 
-            transition:all .3s ease;
+            animation:pulse 2s infinite;
         }
 
         .guest-arrow:hover{
@@ -115,12 +131,12 @@
 
             box-shadow:
             0 0 35px rgba(255,140,0,.9),
-            0 20px 45px rgba(0,0,0,.4);
+            0 20px 45px rgba(0,0,0,.45);
         }
 
         /*
         =====================================
-        SVG FRECCIA
+        ICONA FRECCIA
         =====================================
         */
 
@@ -131,11 +147,11 @@
 
             fill:white;
 
-            transform:rotate(0deg);
-
             position:relative;
 
             left:-5px;
+
+            transform:rotate(0deg);
         }
 
         /*
@@ -169,14 +185,14 @@
 
             .guest-arrow{
 
-                width:80px;
-                height:80px;
+                width:75px;
+                height:75px;
             }
 
             .guest-arrow svg{
 
-                width:50px;
-                height:50px;
+                width:48px;
+                height:48px;
             }
         }
 
@@ -192,34 +208,37 @@
                 overflow:auto;
             }
 
+            .container{
+
+                width:100vw;
+                height:auto;
+
+                min-height:100vh;
+            }
+
             .poster{
 
-                background-size:contain;
-                background-position:center top;
+                width:100%;
+                height:auto;
             }
 
             .guest-arrow{
 
+                width:60px;
+                height:60px;
+
                 /*
-                STESSA POSIZIONE
-                ANCHE SU MOBILE
+                POSIZIONE MOBILE
                 */
 
-                top:61%;
-                left:57%;
-
-                width:65px;
-                height:65px;
-
-                box-shadow:
-                0 0 15px rgba(255,106,0,.6),
-                0 8px 20px rgba(0,0,0,.35);
+                top:56%;
+                left:67%;
             }
 
             .guest-arrow svg{
 
-                width:38px;
-                height:38px;
+                width:36px;
+                height:36px;
 
                 left:-3px;
             }
@@ -235,16 +254,17 @@
 
             .guest-arrow{
 
-                width:58px;
-                height:58px;
+                width:55px;
+                height:55px;
+
+                top:55%;
+                left:68%;
             }
 
             .guest-arrow svg{
 
-                width:34px;
-                height:34px;
-
-                left:-2px;
+                width:32px;
+                height:32px;
             }
         }
 
@@ -254,27 +274,41 @@
 
 <body>
 
-    <section class="hero">
+    <div class="container">
 
-        <div class="poster">
+        <!--
+        =====================================
+        INSERISCI QUI LA TUA LOCANDINA
+        =====================================
+        -->
 
-            <!-- FRECCIA CLICCABILE -->
+        <img
+            src="image/ladispoli.png"
+            alt="Ladispoli Summer Sport"
+            class="poster">
 
-            <a href="gueststar.html" class="guest-arrow">
+        <!--
+        =====================================
+        FRECCIA CLICCABILE
+        =====================================
+        -->
 
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24">
+        <a
+            href="gueststar.html"
+            class="guest-arrow">
 
-                    <path
-                        d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24">
 
-                </svg>
+                <path
+                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
 
-            </a>
+            </svg>
 
-        </div>
+        </a>
 
-    </section>
+    </div>
 
 </body>
 
