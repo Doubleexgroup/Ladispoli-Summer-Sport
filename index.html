@@ -2,8 +2,8 @@
 <html lang="it">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Ladispoli Summer Sport</title>
 
@@ -12,149 +12,211 @@
         rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            overflow: hidden;
-            background: #041b45;
+        body{
+            font-family:'Montserrat',sans-serif;
+            background:#041b45;
+            overflow:hidden;
         }
 
-        .hero {
-            position: relative;
+        .hero{
 
-            width: 100vw;
-            height: 100vh;
+            position:relative;
+
+            width:100vw;
+            height:100vh;
 
             background:
-                #041b45 url("image/ladispoli.png");
+            #041b45 url("image/ladispoli.png");
 
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:contain;
         }
 
         /*
-        ======================================
-        FRECCIA GUEST STAR
-        ======================================
+        =====================================
+        FRECCIA
+        =====================================
         */
 
-        .guest-arrow {
-            position: absolute;
+        .guest-arrow{
 
-            /*
-            POSIZIONE FRECCIA
-            */
-            top: 61%;
-            left: 57%;
+            position:absolute;
 
-            transform: translate(-50%, -50%);
+            top:61%;
+            left:57%;
 
-            width: 90px;
-            height: 90px;
+            transform:translate(-50%,-50%);
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width:90px;
+            height:90px;
 
-            border-radius: 50%;
+            border-radius:50%;
 
-            text-decoration: none;
+            display:flex;
+            align-items:center;
+            justify-content:center;
 
-            z-index: 20;
+            background:linear-gradient(135deg,#ff6a00,#ff9d00);
 
-            background: linear-gradient(135deg, #ff6a00, #ff9500);
+            text-decoration:none;
+
+            z-index:20;
 
             box-shadow:
-                0 0 20px rgba(255, 106, 0, .6),
-                0 0 40px rgba(255, 106, 0, .4),
-                0 15px 40px rgba(0, 0, 0, .4);
+            0 0 20px rgba(255,106,0,.6),
+            0 10px 30px rgba(0,0,0,.35);
 
-            transition: all .3s ease;
+            animation:pulse 2s infinite;
 
-            animation: pulse 2s infinite;
+            transition:all .3s ease;
         }
 
-       .guest-arrow svg {
+        .guest-arrow:hover{
 
-    width: 58px;
-    height: 58px;
-
-    fill: white;
-
-    display:block;
-
-    transform: rotate(0deg);
-
-    position: relative;
-
-    left: 1px;
-}
-
-        .guest-arrow:hover {
-
-            transform: translate(-50%, -50%) scale(1.15);
+            transform:translate(-50%,-50%) scale(1.12);
 
             box-shadow:
-                0 0 30px rgba(255, 136, 0, .9),
-                0 0 60px rgba(255, 136, 0, .5),
-                0 20px 50px rgba(0, 0, 0, .5);
+            0 0 35px rgba(255,140,0,.9),
+            0 20px 45px rgba(0,0,0,.4);
         }
 
-        @keyframes pulse {
+        .guest-arrow svg{
 
-            0% {
-                transform: translate(-50%, -50%) scale(1);
+            width:58px;
+            height:58px;
+
+            fill:white;
+
+            transform:rotate(0deg);
+
+            position:relative;
+
+            left:-5px;
+        }
+
+        /*
+        =====================================
+        ANIMAZIONE
+        =====================================
+        */
+
+        @keyframes pulse{
+
+            0%{
+                transform:translate(-50%,-50%) scale(1);
             }
 
-            50% {
-                transform: translate(-50%, -50%) scale(1.08);
+            50%{
+                transform:translate(-50%,-50%) scale(1.06);
             }
 
-            100% {
-                transform: translate(-50%, -50%) scale(1);
+            100%{
+                transform:translate(-50%,-50%) scale(1);
             }
         }
 
         /*
-        ======================================
-        MOBILE
-        ======================================
+        =====================================
+        TABLET
+        =====================================
         */
 
-        @media(max-width:768px) {
+        @media(max-width:1024px){
 
-            body {
-                overflow: auto;
+            .hero{
+
+                background-size:contain;
             }
 
-            .hero {
+            .guest-arrow{
 
-                height: 100vh;
+                width:80px;
+                height:80px;
 
-                background-size: cover;
-                background-position: center top;
+                top:58%;
+                left:58%;
             }
 
-            .guest-arrow {
+            .guest-arrow svg{
 
-                top: 57%;
-                left: 68%;
-
-                width: 70px;
-                height: 70px;
-            }
-
-            .guest-arrow svg {
-                width: 30px;
-                height: 30px;
+                width:50px;
+                height:50px;
             }
         }
+
+        /*
+        =====================================
+        SMARTPHONE
+        =====================================
+        */
+
+        @media(max-width:768px){
+
+            body{
+                overflow:auto;
+            }
+
+            .hero{
+
+                height:100vh;
+
+                background-size:contain;
+                background-position:center top;
+            }
+
+            .guest-arrow{
+
+                width:65px;
+                height:65px;
+
+                top:56%;
+                left:68%;
+
+                box-shadow:
+                0 0 15px rgba(255,106,0,.6),
+                0 8px 20px rgba(0,0,0,.35);
+            }
+
+            .guest-arrow svg{
+
+                width:38px;
+                height:38px;
+
+                left:1px;
+            }
+        }
+
+        /*
+        =====================================
+        SMARTPHONE PICCOLI
+        =====================================
+        */
+
+        @media(max-width:480px){
+
+            .guest-arrow{
+
+                top:55%;
+                left:69%;
+
+                width:58px;
+                height:58px;
+            }
+
+            .guest-arrow svg{
+
+                width:34px;
+                height:34px;
+            }
+        }
+
     </style>
 </head>
 
@@ -166,12 +228,11 @@
 
         <a href="gueststar.html" class="guest-arrow">
 
-            <!-- ICONA SVG -->
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24">
 
                 <path
-                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z" />
+                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
 
             </svg>
 
