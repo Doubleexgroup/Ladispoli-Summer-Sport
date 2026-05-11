@@ -8,10 +8,12 @@
     <title>Ladispoli Summer Sport</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <style>
+
         *{
             margin:0;
             padding:0;
@@ -24,6 +26,12 @@
             overflow:hidden;
         }
 
+        /*
+        =====================================
+        HERO
+        =====================================
+        */
+
         .hero{
 
             position:relative;
@@ -31,8 +39,27 @@
             width:100vw;
             height:100vh;
 
-            background:
-            #041b45 url("image/ladispoli.png");
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#041b45;
+        }
+
+        /*
+        =====================================
+        LOCANDINA
+        =====================================
+        */
+
+        .poster{
+
+            position:relative;
+
+            width:100%;
+            height:100%;
+
+            background:url("image/ladispoli.png");
 
             background-repeat:no-repeat;
             background-position:center;
@@ -48,6 +75,10 @@
         .guest-arrow{
 
             position:absolute;
+
+            /*
+            TUOI VALORI
+            */
 
             top:61%;
             left:57%;
@@ -86,6 +117,12 @@
             0 0 35px rgba(255,140,0,.9),
             0 20px 45px rgba(0,0,0,.4);
         }
+
+        /*
+        =====================================
+        SVG FRECCIA
+        =====================================
+        */
 
         .guest-arrow svg{
 
@@ -130,18 +167,10 @@
 
         @media(max-width:1024px){
 
-            .hero{
-
-                background-size:contain;
-            }
-
             .guest-arrow{
 
                 width:80px;
                 height:80px;
-
-                top:58%;
-                left:58%;
             }
 
             .guest-arrow svg{
@@ -163,9 +192,7 @@
                 overflow:auto;
             }
 
-            .hero{
-
-                height:100vh;
+            .poster{
 
                 background-size:contain;
                 background-position:center top;
@@ -173,11 +200,16 @@
 
             .guest-arrow{
 
+                /*
+                STESSA POSIZIONE
+                ANCHE SU MOBILE
+                */
+
+                top:61%;
+                left:57%;
+
                 width:65px;
                 height:65px;
-
-                top:56%;
-                left:68%;
 
                 box-shadow:
                 0 0 15px rgba(255,106,0,.6),
@@ -189,7 +221,7 @@
                 width:38px;
                 height:38px;
 
-                left:1px;
+                left:-3px;
             }
         }
 
@@ -203,9 +235,6 @@
 
             .guest-arrow{
 
-                top:55%;
-                left:69%;
-
                 width:58px;
                 height:58px;
             }
@@ -214,29 +243,36 @@
 
                 width:34px;
                 height:34px;
+
+                left:-2px;
             }
         }
 
     </style>
+
 </head>
 
 <body>
 
     <section class="hero">
 
-        <!-- FRECCIA CLICCABILE -->
+        <div class="poster">
 
-        <a href="gueststar.html" class="guest-arrow">
+            <!-- FRECCIA CLICCABILE -->
 
-            <svg xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
+            <a href="gueststar.html" class="guest-arrow">
 
-                <path
-                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24">
 
-            </svg>
+                    <path
+                        d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
 
-        </a>
+                </svg>
+
+            </a>
+
+        </div>
 
     </section>
 
