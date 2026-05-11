@@ -1,0 +1,171 @@
+<!-- gueststar.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guest Star - Ladispoli Summer Sport</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#041b45;
+      color:white;
+    }
+
+    .header{
+      padding:80px 20px 40px;
+      text-align:center;
+    }
+
+    .header h1{
+      font-size:4rem;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .header p{
+      margin-top:15px;
+      font-size:1.2rem;
+      opacity:.8;
+    }
+
+    .guest-container{
+      width:100%;
+      max-width:1400px;
+      margin:auto;
+
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:40px;
+
+      padding:40px;
+    }
+
+    .guest-card{
+      background:white;
+      color:#041b45;
+
+      border-radius:24px;
+      overflow:hidden;
+
+      transition:all .3s ease;
+
+      box-shadow:0 15px 40px rgba(0,0,0,.3);
+    }
+
+    .guest-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .guest-card img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+    }
+
+    .guest-info{
+      padding:25px;
+      text-align:center;
+    }
+
+    .guest-info h2{
+      font-size:1.8rem;
+      margin-bottom:10px;
+      font-weight:800;
+    }
+
+    .guest-info p{
+      opacity:.8;
+      line-height:1.5;
+    }
+
+    .back-home{
+      display:inline-block;
+
+      margin-top:20px;
+
+      background:linear-gradient(90deg,#ff6a00,#ffb300);
+
+      color:white;
+      text-decoration:none;
+
+      padding:16px 28px;
+
+      border-radius:14px;
+
+      font-weight:700;
+    }
+
+    .footer{
+      text-align:center;
+      padding:60px 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+
+    <h1>Guest Star</h1>
+
+    <p>Scopri gli ospiti speciali del Ladispoli Summer Sport</p>
+
+    <a href="index.html" class="back-home">
+      ← Torna alla Home
+    </a>
+
+  </div>
+
+  <section class="guest-container">
+
+    <!-- PERSONAGGIO 1 -->
+    <div class="guest-card">
+      <img src="images/guest1.jpg" alt="Guest Star 1">
+
+      <div class="guest-info">
+        <h2>Mario Rossi</h2>
+        <p>Campione internazionale di Beach Volley.</p>
+      </div>
+    </div>
+
+    <!-- PERSONAGGIO 2 -->
+    <div class="guest-card">
+      <img src="images/guest2.jpg" alt="Guest Star 2">
+
+      <div class="guest-info">
+        <h2>Giulia Bianchi</h2>
+        <p>Influencer sportiva e testimonial dell’evento.</p>
+      </div>
+    </div>
+
+    <!-- PERSONAGGIO 3 -->
+    <div class="guest-card">
+      <img src="images/guest3.jpg" alt="Guest Star 3">
+
+      <div class="guest-info">
+        <h2>Luca Verdi</h2>
+        <p>Speaker ufficiale del Ladispoli Summer Sport.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="footer">
+    © 2026 Ladispoli Summer Sport
+  </div>
+
+</body>
+</html>
