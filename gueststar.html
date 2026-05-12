@@ -81,7 +81,7 @@
       display:grid;
 
       grid-template-columns:
-      repeat(auto-fit,minmax(220px,1fr));
+      repeat(auto-fit,minmax(250px,1fr));
 
       gap:28px;
 
@@ -113,19 +113,17 @@
 
     /* IMMAGINE */
 
-  .guest-image{
+ /* CONTENITORE FOTO */
+
+.guest-image{
 
   width:100%;
-
-  height:170px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  overflow:hidden;
-
-  padding:6px;
+  padding:15px 15px 0;
 
   position:relative;
 
@@ -145,23 +143,28 @@
   #ff6a00 100%);
 }
 
+/* FOTO */
+
 .guest-image img{
 
-  max-width:100%;
-  max-height:100%;
-
   width:auto;
+
+  max-width:100%;
+
+  max-height:240px;
+
   height:auto;
+
+  display:block;
 
   object-fit:contain;
 
-  object-position:center;
-
   transition:transform .4s ease;
-
-  display:block;
 }
 
+.guest-card:hover .guest-image img{
+  transform:scale(1.03);
+}
     /* TESTI */
 
     .guest-info{
