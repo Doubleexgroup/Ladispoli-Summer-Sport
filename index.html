@@ -1,606 +1,467 @@
+# index.html
+
+```html
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <title>Ladispoli Summer Sport</title>
 
-    <title>Ladispoli Summer Sport</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <style>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-    <style>
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#041b45;
+      overflow-x:hidden;
+      color:white;
+    }
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+    a{
+      text-decoration:none;
+    }
 
-        body{
+    /* HERO */
 
-            width:100vw;
-            height:100vh;
+    .hero{
 
-            overflow:hidden;
+      min-height:100vh;
 
-            background:#041b45;
+      display:flex;
+      align-items:center;
+      justify-content:center;
 
-            font-family:'Montserrat',sans-serif;
+      padding:40px 20px;
 
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
+      position:relative;
 
-        /*
-        =====================================
-        CONTENITORE GENERALE
-        =====================================
-        */
+      background:
+      radial-gradient(circle at top left,
+      rgba(255,106,0,.25),
+      transparent 30%),
 
-        .container{
+      radial-gradient(circle at bottom right,
+      rgba(255,179,0,.2),
+      transparent 30%),
 
-            position:relative;
+      linear-gradient(
+      135deg,
+      #041b45 0%,
+      #08265f 45%,
+      #041b45 100%);
+    }
 
-            width:100vw;
-            height:100vh;
+    /* LOCANDINA */
 
-            display:flex;
-            align-items:center;
-            justify-content:center;
+    .poster-container{
 
-            overflow:hidden;
-        }
+      position:relative;
 
-        /*
-        =====================================
-        LOCANDINE
-        =====================================
-        */
+      width:100%;
+      max-width:1400px;
 
-        .poster-desktop,
-        .poster-mobile{
+      margin:auto;
+    }
 
-            user-select:none;
+    .poster{
 
-            pointer-events:none;
-        }
+      width:100%;
 
-        /*
-        =====================================
-        LOCANDINA DESKTOP
-        =====================================
-        */
+      display:block;
 
-        .poster-desktop{
+      border-radius:24px;
 
-            width:100%;
-            height:100%;
+      box-shadow:0 25px 60px rgba(0,0,0,.45);
+    }
 
-            object-fit:contain;
+    /* SOCIAL */
 
-            display:block;
-        }
+    .social-icon{
 
-        /*
-        =====================================
-        LOCANDINA MOBILE
-        =====================================
-        */
+      position:absolute;
 
-        .poster-mobile{
+      z-index:10;
 
-            display:none;
+      transition:.3s ease;
+    }
 
-            width:100%;
-            height:100%;
+    .social-icon img{
 
-            object-fit:contain;
-        }
+      width:68px;
+      height:auto;
 
-        /*
-        =====================================
-        FRECCIA
-        =====================================
-        */
+      display:block;
 
-        .guest-arrow{
+      filter:
+      drop-shadow(0 0 14px rgba(255,106,0,.4));
+    }
 
-            position:absolute;
+    .social-icon:hover{
 
-            /*
-            POSIZIONE DESKTOP
-            */
+      transform:
+      scale(1.08)
+      translateY(-3px);
+    }
 
-            top:61%;
-            left:57%;
+    /* INSTAGRAM */
 
-            transform:translate(-50%,-50%);
+    .instagram-icon{
 
-            width:90px;
-            height:90px;
+      bottom:20px;
+      right:95px;
+    }
 
-            border-radius:50%;
+    /* FACEBOOK */
 
-            background:linear-gradient(135deg,#ff6a00,#ff9800);
+    .facebook-icon{
 
-            display:flex;
-            align-items:center;
-            justify-content:center;
+      bottom:20px;
+      right:18px;
+    }
 
-            text-decoration:none;
+    /* BUTTON GUEST */
 
-            z-index:100;
+    .guest-btn{
 
-            box-shadow:
-            0 0 20px rgba(255,106,0,.6),
-            0 10px 30px rgba(0,0,0,.35);
+      position:absolute;
 
-            transition:.3s ease;
+      top:50%;
+      left:50%;
 
-            animation:pulse 2s infinite;
-        }
+      transform:translate(-50%, -50%);
 
-        .guest-arrow:hover{
+      padding:18px 34px;
 
-            transform:translate(-50%,-50%) scale(1.12);
+      border-radius:18px;
 
-            box-shadow:
-            0 0 35px rgba(255,140,0,.9),
-            0 20px 45px rgba(0,0,0,.45);
-        }
+      background:linear-gradient(
+      90deg,
+      #ff6a00,
+      #ffb300);
 
-        /*
-        =====================================
-        ICONA FRECCIA
-        =====================================
-        */
+      color:white;
 
-        .guest-arrow svg{
+      font-weight:800;
 
-            width:58px;
-            height:58px;
+      font-size:1rem;
 
-            fill:white;
+      box-shadow:0 12px 35px rgba(255,106,0,.35);
 
-            position:relative;
+      transition:.3s ease;
+    }
 
-            left:-5px;
+    .guest-btn:hover{
 
-            transform:rotate(0deg);
-        }
+      transform:
+      translate(-50%, -50%)
+      scale(1.05);
+    }
 
-        /*
-        =====================================
-        ANIMAZIONE
-        =====================================
-        */
+    /* COOKIE */
 
-        @keyframes pulse{
+    #cookie-banner{
 
-            0%{
-                transform:translate(-50%,-50%) scale(1);
-            }
+      position:fixed;
 
-            50%{
-                transform:translate(-50%,-50%) scale(1.06);
-            }
+      bottom:25px;
+      left:25px;
+      right:25px;
 
-            100%{
-                transform:translate(-50%,-50%) scale(1);
-            }
-        }
+      z-index:99999;
 
-        /*
-        =====================================
-        TABLET
-        =====================================
-        */
+      display:none;
 
-        @media(max-width:1024px){
+      animation:fadeUp .5s ease;
+    }
 
-            .guest-arrow{
+    .cookie-box{
 
-                width:75px;
-                height:75px;
-            }
+      background:rgba(255,255,255,.96);
 
-            .guest-arrow svg{
+      backdrop-filter:blur(14px);
 
-                width:48px;
-                height:48px;
-            }
-        }
+      border-radius:24px;
 
-        /*
-        =====================================
-        SMARTPHONE
-        =====================================
-        */
+      padding:22px;
 
-        @media(max-width:768px){
+      box-shadow:0 15px 40px rgba(0,0,0,.25);
 
-            body{
-                overflow:hidden;
-            }
+      display:flex;
 
-            /*
-            NASCONDE DESKTOP
-            */
+      align-items:center;
+      justify-content:space-between;
 
-            .poster-desktop{
-                display:none;
-            }
+      gap:20px;
 
-            /*
-            MOSTRA MOBILE
-            */
+      flex-wrap:wrap;
+    }
 
-            .poster-mobile{
-                display:block;
-            }
+    .cookie-box p{
 
-            /*
-            FRECCIA MOBILE
-            */
+      flex:1;
 
-            .guest-arrow{
+      color:#041b45;
 
-                width:60px;
-                height:60px;
+      font-size:.95rem;
 
-                /*
-                POSIZIONE MOBILE
-                */
+      line-height:1.6;
 
-                top:63%;
-                left:74%;
-            }
+      font-weight:500;
+    }
 
-            .guest-arrow svg{
+    .cookie-buttons{
 
-                width:36px;
-                height:36px;
+      display:flex;
 
-                left:-3px;
-            }
-        }
+      gap:12px;
+    }
 
-        /*
-        =====================================
-        SMARTPHONE PICCOLI
-        =====================================
-        */
+    .cookie-buttons button{
 
-        @media(max-width:480px){
+      border:none;
 
-            .guest-arrow{
+      padding:14px 26px;
 
-                width:55px;
-                height:55px;
+      border-radius:16px;
 
-                top:63%;
-                left:74%;
-            }
+      cursor:pointer;
 
-            .guest-arrow svg{
+      font-weight:700;
 
-                width:32px;
-                height:32px;
-            }
-        }
+      font-size:.95rem;
 
-    </style>
+      transition:.3s ease;
+
+      font-family:'Montserrat',sans-serif;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:8px;
+
+      min-width:140px;
+    }
+
+    .cookie-buttons button:hover{
+      transform:translateY(-2px);
+    }
+
+    .accept-btn{
+
+      background:linear-gradient(
+      90deg,
+      #ff6a00,
+      #ffb300);
+
+      color:white;
+
+      box-shadow:0 8px 20px rgba(255,106,0,.35);
+    }
+
+    .reject-btn{
+
+      background:#eef2f8;
+
+      color:#041b45;
+
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .social-icon img{
+        width:48px;
+      }
+
+      .instagram-icon{
+        bottom:12px;
+        right:65px;
+      }
+
+      .facebook-icon{
+        bottom:12px;
+        right:10px;
+      }
+
+      .guest-btn{
+
+        padding:14px 24px;
+
+        font-size:.9rem;
+      }
+
+      #cookie-banner{
+        left:15px;
+        right:15px;
+        bottom:15px;
+      }
+
+      .cookie-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+      }
+
+      .cookie-buttons{
+        width:100%;
+      }
+
+      .cookie-buttons button{
+        flex:1;
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-    <div class="container">
+  <!-- HERO -->
 
-        <!--
-        =====================================
-        LOCANDINA DESKTOP
-        =====================================
-        -->
+  <section class="hero">
 
-        <img
-            src="image/ladispoli.png"
-            alt="Ladispoli Summer Sport"
-            class="poster-desktop">
+    <div class="poster-container">
 
-        <!--
-        =====================================
-        LOCANDINA SMARTPHONE
-        =====================================
-        -->
+      <!-- LOCANDINA -->
 
-        <img
-            src="image/ladispoli_smartphone.png"
-            alt="Ladispoli Summer Sport Mobile"
-            class="poster-mobile">
+      <img src="image/locandina.jpg"
+           alt="Ladispoli Summer Sport"
+           class="poster">
 
-        <!--
-        =====================================
-        FRECCIA CLICCABILE
-        =====================================
-        -->
+      <!-- BOTTONE GUEST -->
 
-        <a
-            href="gueststar.html"
-            class="guest-arrow">
+      <a href="gueststar.html"
+         class="guest-btn">
+         SCOPRI LE GUEST STAR
+      </a>
 
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
+      <!-- INSTAGRAM -->
 
-                <path
-                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
+      <a href="https://instagram.com/"
+         target="_blank"
+         class="social-icon instagram-icon">
 
-            </svg>
+        <img src="image/instagram.png"
+             alt="Instagram">
 
-        </a>
+      </a>
+
+      <!-- FACEBOOK -->
+
+      <a href="https://facebook.com/"
+         target="_blank"
+         class="social-icon facebook-icon">
+
+        <img src="image/facebook.png"
+             alt="Facebook">
+
+      </a>
 
     </div>
-<!-- COOKIE BANNER -->
 
-<!-- COOKIE BANNER -->
+  </section>
 
-<div id="cookie-banner">
+  <!-- COOKIE BANNER -->
 
-  <div class="cookie-box">
+  <div id="cookie-banner">
 
-    <p>
-      Questo sito utilizza esclusivamente cookie tecnici
-      necessari al corretto funzionamento della piattaforma.
-      Nessun dato viene condiviso con terze parti.
-    </p>
+    <div class="cookie-box">
 
-    <div class="cookie-buttons">
+      <p>
+        Questo sito utilizza esclusivamente cookie tecnici necessari
+        al corretto funzionamento della piattaforma.
+      </p>
 
-      <button id="accept-cookies" class="accept-btn">
-        ✓ Accetta
-      </button>
+      <div class="cookie-buttons">
 
-      <button id="reject-cookies" class="reject-btn">
-        ✕ Rifiuta
-      </button>
+        <button id="accept-cookies"
+                class="accept-btn">
+          ✓ Accetta
+        </button>
+
+        <button id="reject-cookies"
+                class="reject-btn">
+          ✕ Rifiuta
+        </button>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
+  <script>
 
-<style>
+    const cookieBanner =
+    document.getElementById('cookie-banner');
 
-/* COOKIE BANNER */
+    const acceptBtn =
+    document.getElementById('accept-cookies');
 
-#cookie-banner{
+    const rejectBtn =
+    document.getElementById('reject-cookies');
 
-  position:fixed;
+    if(!localStorage.getItem('cookieChoice')){
 
-  bottom:25px;
-  left:25px;
-  right:25px;
+      cookieBanner.style.display = 'block';
+    }
 
-  z-index:99999;
+    acceptBtn.addEventListener('click', () => {
 
-  display:none;
+      localStorage.setItem(
+        'cookieChoice',
+        'accepted'
+      );
 
-  animation:fadeUp .5s ease;
-}
+      cookieBanner.style.display = 'none';
+    });
 
-/* BOX */
+    rejectBtn.addEventListener('click', () => {
 
-.cookie-box{
+      localStorage.setItem(
+        'cookieChoice',
+        'rejected'
+      );
 
-  background:rgba(255,255,255,.96);
+      cookieBanner.style.display = 'none';
+    });
 
-  backdrop-filter:blur(14px);
-
-  border-radius:24px;
-
-  padding:22px;
-
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-  display:flex;
-
-  align-items:center;
-  justify-content:space-between;
-
-  gap:20px;
-
-  flex-wrap:wrap;
-}
-
-/* TESTO */
-
-.cookie-box p{
-
-  flex:1;
-
-  color:#041b45;
-
-  font-size:.95rem;
-
-  line-height:1.6;
-
-  font-weight:500;
-}
-
-/* BOTTONI */
-
-.cookie-buttons{
-
-  display:flex;
-
-  gap:12px;
-}
-
-.cookie-buttons button{
-
-  border:none;
-
-  padding:14px 26px;
-
-  border-radius:16px;
-
-  cursor:pointer;
-
-  font-weight:700;
-
-  font-size:.95rem;
-
-  transition:.3s ease;
-
-  font-family:'Montserrat',sans-serif;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  gap:8px;
-
-  min-width:140px;
-}
-
-.cookie-buttons button:hover{
-  transform:translateY(-2px);
-}
-
-/* ACCETTA */
-
-.accept-btn{
-
-  background:linear-gradient(
-  90deg,
-  #ff6a00,
-  #ffb300);
-
-  color:white;
-
-  box-shadow:0 8px 20px rgba(255,106,0,.35);
-}
-
-/* RIFIUTA */
-
-.reject-btn{
-
-  background:#eef2f8;
-
-  color:#041b45;
-
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-/* ANIMAZIONE */
-
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-  #cookie-banner{
-    left:15px;
-    right:15px;
-    bottom:15px;
-  }
-
-  .cookie-box{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-  }
-
-  .cookie-buttons{
-
-    width:100%;
-  }
-
-  .cookie-buttons button{
-
-    flex:1;
-  }
-
-}
-
-</style>
-
-<script>
-
-/* ELEMENTI */
-
-const cookieBanner =
-document.getElementById('cookie-banner');
-
-const acceptBtn =
-document.getElementById('accept-cookies');
-
-const rejectBtn =
-document.getElementById('reject-cookies');
-
-/* MOSTRA BANNER */
-
-if(!localStorage.getItem('cookieChoice')){
-
-  cookieBanner.style.display = 'block';
-}
-
-/* ACCETTA */
-
-acceptBtn.addEventListener('click', () => {
-
-  localStorage.setItem(
-    'cookieChoice',
-    'accepted'
-  );
-
-  cookieBanner.style.display = 'none';
-
-});
-
-/* RIFIUTA */
-
-rejectBtn.addEventListener('click', () => {
-
-  localStorage.setItem(
-    'cookieChoice',
-    'rejected'
-  );
-
-  cookieBanner.style.display = 'none';
-
-});
-
-</script>
+  </script>
 
 </body>
-
 </html>
+
+
+
