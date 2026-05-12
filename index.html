@@ -33,56 +33,65 @@
 
     /* HERO */
 
-    .hero{
+.hero{
 
-      min-height:100vh;
+  width:100vw;
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
+  height:100vh;
 
-      padding:0;
+  display:flex;
 
-      position:relative;
+  align-items:center;
+  justify-content:center;
 
-      background:
-      radial-gradient(circle at top left,
-      rgba(255,106,0,.25),
-      transparent 30%),
+  overflow:hidden;
 
-      radial-gradient(circle at bottom right,
-      rgba(255,179,0,.2),
-      transparent 30%),
+  padding:0;
 
-      linear-gradient(
-      135deg,
-      #041b45 0%,
-      #08265f 45%,
-      #041b45 100%);
-    }
+  position:relative;
+
+  background:
+  radial-gradient(circle at top left,
+  rgba(255,106,0,.25),
+  transparent 30%),
+
+  radial-gradient(circle at bottom right,
+  rgba(255,179,0,.2),
+  transparent 30%),
+
+  linear-gradient(
+  135deg,
+  #041b45 0%,
+  #08265f 45%,
+  #041b45 100%);
+}
 
     /* LOCANDINA */
 
-    .poster-container{
+.poster-container{
 
-      position:relative;
+  position:relative;
 
-      width:100%;
-      max-width:100%;
+  width:100vw;
 
-      margin:auto;
-    }
+  height:100vh;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
 
     .poster{
 
-      width:100%;
+  width:100%;
 
-      display:block;
+  height:100%;
 
-      border-radius:0;
+  object-fit:contain;
 
-      box-shadow:0 25px 60px rgba(0,0,0,.45);
-    }
+  display:block;
+}
 
     /* SOCIAL */
 
