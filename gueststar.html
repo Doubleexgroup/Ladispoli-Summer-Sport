@@ -1,4 +1,3 @@
-<!-- gueststar.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -21,6 +20,7 @@
       font-family:'Montserrat',sans-serif;
       background:#041b45;
       color:white;
+      overflow-x:hidden;
     }
 
     .header{
@@ -46,70 +46,128 @@
       margin:auto;
 
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:40px;
 
-      padding:40px;
+      padding:40px 20px 80px;
     }
 
     .guest-card{
       background:white;
       color:#041b45;
 
-      border-radius:24px;
+      border-radius:28px;
       overflow:hidden;
 
-      transition:all .3s ease;
+      transition:all .35s ease;
 
-      box-shadow:0 15px 40px rgba(0,0,0,.3);
+      box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+      position:relative;
     }
 
     .guest-card:hover{
-      transform:translateY(-10px);
+      transform:translateY(-12px);
+      box-shadow:0 25px 50px rgba(0,0,0,.45);
     }
 
-    .guest-card img{
+    /*
+      CONTENITORE IMMAGINE UNIVERSALE
+      Supporta qualsiasi formato immagine
+    */
+    .guest-image{
       width:100%;
-      height:350px;
+      height:420px;
+
+      background:#0b2c68;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      overflow:hidden;
+      position:relative;
+    }
+
+    .guest-image img{
+      width:100%;
+      height:100%;
+
       object-fit:cover;
+      object-position:center;
+
+      transition:transform .5s ease;
+
+      display:block;
+    }
+
+    .guest-card:hover .guest-image img{
+      transform:scale(1.06);
     }
 
     .guest-info{
-      padding:25px;
+      padding:28px;
       text-align:center;
     }
 
     .guest-info h2{
-      font-size:1.8rem;
-      margin-bottom:10px;
+      font-size:1.9rem;
+      margin-bottom:12px;
       font-weight:800;
     }
 
     .guest-info p{
       opacity:.8;
-      line-height:1.5;
+      line-height:1.7;
+      font-size:1rem;
     }
 
     .back-home{
       display:inline-block;
 
-      margin-top:20px;
+      margin-top:25px;
 
       background:linear-gradient(90deg,#ff6a00,#ffb300);
 
       color:white;
       text-decoration:none;
 
-      padding:16px 28px;
+      padding:16px 30px;
 
-      border-radius:14px;
+      border-radius:16px;
 
       font-weight:700;
+
+      transition:0.3s;
+    }
+
+    .back-home:hover{
+      transform:translateY(-3px);
+      opacity:.9;
     }
 
     .footer{
       text-align:center;
-      padding:60px 20px;
+      padding:50px 20px;
+      opacity:.7;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .header h1{
+        font-size:2.7rem;
+      }
+
+      .guest-image{
+        height:340px;
+      }
+
+      .guest-info h2{
+        font-size:1.6rem;
+      }
+
     }
 
   </style>
@@ -133,38 +191,50 @@
 
     <!-- PERSONAGGIO 1 -->
     <div class="guest-card">
-      <img src="image/sinner.png" alt="Guest Star 1">
+
+      <div class="guest-image">
+        <img src="image/sinner.png" alt="Guest Star 1" loading="lazy">
+      </div>
 
       <div class="guest-info">
         <h2>Mario Rossi</h2>
         <p>Campione internazionale di Beach Tennis.</p>
       </div>
+
     </div>
 
     <!-- PERSONAGGIO 2 -->
     <div class="guest-card">
-      <img src="image/totti.png" alt="Guest Star 2">
+
+      <div class="guest-image">
+        <img src="image/totti.png" alt="Guest Star 2" loading="lazy">
+      </div>
 
       <div class="guest-info">
         <h2>Giulio Bianchi</h2>
         <p>Il capitano dell’evento.</p>
       </div>
+
     </div>
 
     <!-- PERSONAGGIO 3 -->
     <div class="guest-card">
-      <img src="image/madrina.png" alt="Guest Star 3">
+
+      <div class="guest-image">
+        <img src="image/madrina.png" alt="Guest Star 3" loading="lazy">
+      </div>
 
       <div class="guest-info">
         <h2>Eva Verdi</h2>
         <p>Madrina del Ladispoli Summer Sport.</p>
       </div>
+
     </div>
 
   </section>
 
   <div class="footer">
-    © 2026 Ladispoli Summer Sport
+    © 2026 Ladispoli Summer Sport - Doubleexevent
   </div>
 
 </body>
