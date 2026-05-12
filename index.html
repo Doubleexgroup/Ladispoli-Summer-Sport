@@ -41,7 +41,7 @@
       align-items:center;
       justify-content:center;
 
-      padding:40px 20px;
+      padding:0;
 
       position:relative;
 
@@ -68,7 +68,7 @@
       position:relative;
 
       width:100%;
-      max-width:1400px;
+      max-width:100%;
 
       margin:auto;
     }
@@ -79,7 +79,7 @@
 
       display:block;
 
-      border-radius:24px;
+      border-radius:0;
 
       box-shadow:0 25px 60px rgba(0,0,0,.45);
     }
@@ -313,27 +313,48 @@
       }
 
       .instagram-icon{
-        bottom:8px;
+        bottom:-8px;
         right:52px;
       }
 
       .facebook-icon{
-        bottom:8px;
+        bottom:-8px;
         right:6px;
       }
 
-      .guest-btn{
+     .guest-btn{
 
-        padding:12px 20px;
+  position:absolute;
 
-        font-size:.78rem;
+  top:50%;
+  left:50%;
 
-        border-radius:14px;
+  transform:translate(-50%, -50%);
 
-        width:70%;
+  width:85px;
+  height:85px;
 
-        text-align:center;
-      }
+  border-radius:50%;
+
+  background:linear-gradient(
+  135deg,
+  #ff6a00,
+  #ffb300);
+
+  color:white;
+
+  font-size:2rem;
+
+  font-weight:900;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:0 15px 35px rgba(255,106,0,.4);
+
+  transition:.3s ease;
+}
 
       #cookie-banner{
         left:15px;
@@ -380,7 +401,7 @@
 
       <a href="gueststar.html"
          class="guest-btn">
-         SCOPRI LE GUEST STAR
+         ←
       </a>
 
       <!-- INSTAGRAM -->
