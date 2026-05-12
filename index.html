@@ -3,515 +3,708 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-  <title>Ladispoli Summer Sport</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Ladispoli Summer Sport</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FONT -->
 
-  <style>
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-    body{
-      font-family:'Montserrat',sans-serif;
-      background:#041b45;
-      overflow-x:hidden;
-      color:white;
-    }
+    <style>
 
-    a{
-      text-decoration:none;
-    }
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-    /* HERO */
+        body{
 
-.hero{
+            width:100vw;
+            height:100vh;
 
-  width:100vw;
+            overflow:hidden;
 
-  height:100vh;
+            background:#041b45;
 
-  display:flex;
+            font-family:'Montserrat',sans-serif;
 
-  align-items:center;
-  justify-content:center;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
 
-  overflow:hidden;
+        /*
+        =====================================
+        CONTENITORE GENERALE
+        =====================================
+        */
 
-  padding:0;
+        .container{
 
-  position:relative;
+            position:relative;
 
-  background:
-  radial-gradient(circle at top left,
-  rgba(255,106,0,.25),
-  transparent 30%),
+            width:100vw;
+            height:100vh;
 
-  radial-gradient(circle at bottom right,
-  rgba(255,179,0,.2),
-  transparent 30%),
+            display:flex;
+            align-items:center;
+            justify-content:center;
 
-  linear-gradient(
-  135deg,
-  #041b45 0%,
-  #08265f 45%,
-  #041b45 100%);
-}
+            overflow:hidden;
+        }
 
-    /* LOCANDINA */
+        /*
+        =====================================
+        LOCANDINE
+        =====================================
+        */
 
-.poster-container{
+        .poster-desktop,
+        .poster-mobile{
 
-  position:relative;
+            user-select:none;
 
-  width:100vw;
+            pointer-events:none;
+        }
 
-  height:100vh;
+        /*
+        =====================================
+        LOCANDINA DESKTOP
+        =====================================
+        */
 
-  display:flex;
+        .poster-desktop{
 
-  align-items:center;
-  justify-content:center;
-}
+            width:100%;
+            height:100%;
 
-    .poster{
+            object-fit:contain;
 
-  width:100%;
+            display:block;
+        }
 
-  height:100%;
+        /*
+        =====================================
+        LOCANDINA MOBILE
+        =====================================
+        */
 
-  object-fit:contain;
+        .poster-mobile{
 
-  display:block;
-}
+            display:none;
 
-    /* SOCIAL */
+            width:100%;
+            height:100%;
 
-    .social-icon{
+            object-fit:contain;
+        }
 
-      position:absolute;
+        /*
+        =====================================
+        FRECCIA
+        =====================================
+        */
 
-      z-index:10;
+        .guest-arrow{
 
-      transition:.3s ease;
-    }
+            position:absolute;
 
-    .social-icon img{
+            top:61%;
+            left:57%;
 
-  width:58px;
+            transform:translate(-50%,-50%);
 
-  height:58px;
+            width:90px;
+            height:90px;
 
-  object-fit:contain;
+            border-radius:50%;
 
-  display:block;
+            background:linear-gradient(135deg,#ff6a00,#ff9800);
 
-  filter:
-  drop-shadow(0 0 14px rgba(255,106,0,.4));
-}
+            display:flex;
+            align-items:center;
+            justify-content:center;
 
-    .social-icon:hover{
+            text-decoration:none;
 
-      transform:
-      scale(1.08)
-      translateY(-3px);
-    }
+            z-index:100;
 
- /* INSTAGRAM */
+            box-shadow:
+            0 0 20px rgba(255,106,0,.6),
+            0 10px 30px rgba(0,0,0,.35);
 
-.instagram-icon{
+            transition:.3s ease;
 
-  bottom:-8px;
+            animation:pulse 2s infinite;
+        }
 
-  right:95px;
-}
+        .guest-arrow:hover{
 
-/* FACEBOOK */
+            transform:translate(-50%,-50%) scale(1.12);
 
-.facebook-icon{
+            box-shadow:
+            0 0 35px rgba(255,140,0,.9),
+            0 20px 45px rgba(0,0,0,.45);
+        }
 
-  bottom:-8px;
+        /*
+        =====================================
+        ICONA FRECCIA
+        =====================================
+        */
 
-  right:22px;
-}
+        .guest-arrow svg{
 
-    /* BUTTON GUEST */
+            width:58px;
+            height:58px;
 
-    .guest-btn{
+            fill:white;
 
-      position:absolute;
+            position:relative;
 
-      top:50%;
-      left:50%;
+            left:-5px;
+        }
 
-      transform:translate(-50%, -50%);
+        /*
+        =====================================
+        SOCIAL CLICKABLE
+        =====================================
+        */
 
-      padding:18px 34px;
+        .social-icon{
 
-      border-radius:18px;
+            position:absolute;
 
-      background:linear-gradient(
-      90deg,
-      #ff6a00,
-      #ffb300);
+            z-index:200;
 
-      color:white;
+            transition:.3s ease;
+        }
 
-      font-weight:800;
+        .social-icon img{
 
-      font-size:1rem;
+            width:58px;
+            height:58px;
 
-      box-shadow:0 12px 35px rgba(255,106,0,.35);
+            object-fit:contain;
 
-      transition:.3s ease;
-    }
+            display:block;
 
-    .guest-btn:hover{
+            filter:
+            drop-shadow(0 0 14px rgba(255,106,0,.4));
+        }
 
-      transform:
-      translate(-50%, -50%)
-      scale(1.05);
-    }
+        .social-icon:hover{
 
-    /* COOKIE */
+            transform:scale(1.08);
+        }
 
-    #cookie-banner{
+        /*
+        =====================================
+        INSTAGRAM DESKTOP
+        =====================================
+        */
 
-      position:fixed;
+        .instagram-icon{
 
-      bottom:25px;
-      left:25px;
-      right:25px;
+            bottom:-6px;
+            right:90px;
+        }
 
-      z-index:99999;
+        /*
+        =====================================
+        FACEBOOK DESKTOP
+        =====================================
+        */
 
-      display:none;
+        .facebook-icon{
 
-      animation:fadeUp .5s ease;
-    }
+            bottom:-6px;
+            right:18px;
+        }
 
-    .cookie-box{
+        /*
+        =====================================
+        ANIMAZIONE
+        =====================================
+        */
 
-      background:rgba(255,255,255,.96);
+        @keyframes pulse{
 
-      backdrop-filter:blur(14px);
+            0%{
+                transform:translate(-50%,-50%) scale(1);
+            }
 
-      border-radius:24px;
+            50%{
+                transform:translate(-50%,-50%) scale(1.06);
+            }
 
-      padding:22px;
+            100%{
+                transform:translate(-50%,-50%) scale(1);
+            }
+        }
 
-      box-shadow:0 15px 40px rgba(0,0,0,.25);
+        /*
+        =====================================
+        TABLET
+        =====================================
+        */
 
-      display:flex;
+        @media(max-width:1024px){
 
-      align-items:center;
-      justify-content:space-between;
+            .guest-arrow{
 
-      gap:20px;
+                width:75px;
+                height:75px;
+            }
 
-      flex-wrap:wrap;
-    }
+            .guest-arrow svg{
 
-    .cookie-box p{
+                width:48px;
+                height:48px;
+            }
+        }
 
-      flex:1;
+        /*
+        =====================================
+        SMARTPHONE
+        =====================================
+        */
 
-      color:#041b45;
+        @media(max-width:768px){
 
-      font-size:.95rem;
+            body{
+                overflow:hidden;
+            }
 
-      line-height:1.6;
+            /*
+            NASCONDE DESKTOP
+            */
 
-      font-weight:500;
-    }
+            .poster-desktop{
+                display:none;
+            }
 
-    .cookie-buttons{
+            /*
+            MOSTRA MOBILE
+            */
 
-      display:flex;
+            .poster-mobile{
+                display:block;
+            }
 
-      gap:12px;
-    }
+            /*
+            FRECCIA MOBILE
+            */
 
-    .cookie-buttons button{
+            .guest-arrow{
 
-      border:none;
+                width:60px;
+                height:60px;
 
-      padding:14px 26px;
+                top:63%;
+                left:74%;
+            }
 
-      border-radius:16px;
+            .guest-arrow svg{
 
-      cursor:pointer;
+                width:36px;
+                height:36px;
 
-      font-weight:700;
+                left:-3px;
+            }
 
-      font-size:.95rem;
+            /*
+            SOCIAL MOBILE
+            */
 
-      transition:.3s ease;
+            .social-icon img{
 
-      font-family:'Montserrat',sans-serif;
+                width:42px;
+                height:42px;
+            }
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
+            .instagram-icon{
 
-      gap:8px;
+                bottom:-4px;
+                right:52px;
+            }
 
-      min-width:140px;
-    }
+            .facebook-icon{
 
-    .cookie-buttons button:hover{
-      transform:translateY(-2px);
-    }
+                bottom:-4px;
+                right:6px;
+            }
+        }
 
-    .accept-btn{
+        /*
+        =====================================
+        SMARTPHONE PICCOLI
+        =====================================
+        */
 
-      background:linear-gradient(
-      90deg,
-      #ff6a00,
-      #ffb300);
+        @media(max-width:480px){
 
-      color:white;
+            .guest-arrow{
 
-      box-shadow:0 8px 20px rgba(255,106,0,.35);
-    }
+                width:55px;
+                height:55px;
 
-    .reject-btn{
+                top:63%;
+                left:74%;
+            }
 
-      background:#eef2f8;
+            .guest-arrow svg{
 
-      color:#041b45;
+                width:32px;
+                height:32px;
+            }
+        }
 
-      box-shadow:0 8px 20px rgba(0,0,0,.08);
-    }
-
-    @keyframes fadeUp{
-
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:768px){
-
-      .hero{
-        min-height:auto;
-        padding:20px 10px 40px;
-      }
-
-      .poster-container{
-        max-width:100%;
-      }
-
-      .poster{
-        border-radius:16px;
-      }
-
-      .social-icon img{
-        width:42px;
-      }
-
-      .instagram-icon{
-        bottom:-8px;
-        right:52px;
-      }
-
-      .facebook-icon{
-        bottom:-8px;
-        right:6px;
-      }
-
-     .guest-btn{
-
-  position:absolute;
-
-  top:50%;
-  left:50%;
-
-  transform:translate(-50%, -50%);
-
-  width:85px;
-  height:85px;
-
-  border-radius:50%;
-
-  background:linear-gradient(
-  135deg,
-  #ff6a00,
-  #ffb300);
-
-  color:white;
-
-  font-size:2rem;
-
-  font-weight:900;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  box-shadow:0 15px 35px rgba(255,106,0,.4);
-
-  transition:.3s ease;
-}
-
-      #cookie-banner{
-        left:15px;
-        right:15px;
-        bottom:15px;
-      }
-
-      .cookie-box{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-      }
-
-      .cookie-buttons{
-        width:100%;
-      }
-
-      .cookie-buttons button{
-        flex:1;
-      }
-
-    }
-
-  </style>
+    </style>
 
 </head>
 
 <body>
 
-  <!-- HERO -->
+    <div class="container">
 
-  <section class="hero">
+        <!--
+        =====================================
+        LOCANDINA DESKTOP
+        =====================================
+        -->
 
-    <div class="poster-container">
+        <img
+            src="image/ladispoli2.png"
+            alt="Ladispoli Summer Sport"
+            class="poster-desktop">
 
-      <!-- LOCANDINA -->
+        <!--
+        =====================================
+        LOCANDINA SMARTPHONE
+        =====================================
+        -->
 
-      <img src="image/ladispoli2.png"
-           alt="Ladispoli Summer Sport"
-           class="poster">
+        <img
+            src="image/ladispoli_smartphone.png"
+            alt="Ladispoli Summer Sport Mobile"
+            class="poster-mobile">
 
-      <!-- BOTTONE GUEST -->
+        <!--
+        =====================================
+        FRECCIA CLICCABILE
+        =====================================
+        -->
 
-      <a href="gueststar.html"
-         class="guest-btn">
-         ←
-      </a>
+        <a
+            href="gueststar.html"
+            class="guest-arrow">
 
-      <!-- INSTAGRAM -->
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24">
 
-      <a href="https://instagram.com/"
-         target="_blank"
-         class="social-icon instagram-icon">
+                <path
+                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
 
-        <img src="image/insta-removebg-preview.png"
-             alt="Instagram">
+            </svg>
 
-      </a>
+        </a>
 
-      <!-- FACEBOOK -->
+        <!--
+        =====================================
+        INSTAGRAM
+        =====================================
+        -->
 
-      <a href="https://facebook.com/"
-         target="_blank"
-         class="social-icon facebook-icon">
+        <a
+            href="https://instagram.com/"
+            target="_blank"
+            class="social-icon instagram-icon">
 
-        <img src="image/facebook.png"
-             alt="Facebook">
+            <img
+                src="image/insta-removebg-preview.png"
+                alt="Instagram">
 
-      </a>
+        </a>
+
+        <!--
+        =====================================
+        FACEBOOK
+        =====================================
+        -->
+
+        <a
+            href="https://facebook.com/"
+            target="_blank"
+            class="social-icon facebook-icon">
+
+            <img
+                src="image/facebook.png"
+                alt="Facebook">
+
+        </a>
 
     </div>
 
-  </section>
+    <!-- COOKIE BANNER -->
 
-  <!-- COOKIE BANNER -->
+    <div id="cookie-banner">
 
-  <div id="cookie-banner">
+      <div class="cookie-box">
 
-    <div class="cookie-box">
+        <p>
+          Questo sito utilizza esclusivamente cookie tecnici
+          necessari al corretto funzionamento della piattaforma.
+          Nessun dato viene condiviso con terze parti.
+        </p>
 
-      <p>
-        Questo sito utilizza esclusivamente cookie tecnici necessari
-        al corretto funzionamento della piattaforma.
-      </p>
+        <div class="cookie-buttons">
 
-      <div class="cookie-buttons">
+          <button id="accept-cookies" class="accept-btn">
+            ✓ Accetta
+          </button>
 
-        <button id="accept-cookies"
-                class="accept-btn">
-          ✓ Accetta
-        </button>
+          <button id="reject-cookies" class="reject-btn">
+            ✕ Rifiuta
+          </button>
 
-        <button id="reject-cookies"
-                class="reject-btn">
-          ✕ Rifiuta
-        </button>
+        </div>
 
       </div>
 
     </div>
 
-  </div>
+<style>
 
-  <script>
+/* COOKIE BANNER */
 
-    const cookieBanner =
-    document.getElementById('cookie-banner');
+#cookie-banner{
 
-    const acceptBtn =
-    document.getElementById('accept-cookies');
+  position:fixed;
 
-    const rejectBtn =
-    document.getElementById('reject-cookies');
+  bottom:25px;
+  left:25px;
+  right:25px;
 
-    if(!localStorage.getItem('cookieChoice')){
+  z-index:99999;
 
-      cookieBanner.style.display = 'block';
-    }
+  display:none;
 
-    acceptBtn.addEventListener('click', () => {
+  animation:fadeUp .5s ease;
+}
 
-      localStorage.setItem(
-        'cookieChoice',
-        'accepted'
-      );
+/* BOX */
 
-      cookieBanner.style.display = 'none';
-    });
+.cookie-box{
 
-    rejectBtn.addEventListener('click', () => {
+  background:rgba(255,255,255,.96);
 
-      localStorage.setItem(
-        'cookieChoice',
-        'rejected'
-      );
+  backdrop-filter:blur(14px);
 
-      cookieBanner.style.display = 'none';
-    });
+  border-radius:24px;
 
-  </script>
+  padding:22px;
+
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+/* TESTO */
+
+.cookie-box p{
+
+  flex:1;
+
+  color:#041b45;
+
+  font-size:.95rem;
+
+  line-height:1.6;
+
+  font-weight:500;
+}
+
+/* BOTTONI */
+
+.cookie-buttons{
+
+  display:flex;
+
+  gap:12px;
+}
+
+.cookie-buttons button{
+
+  border:none;
+
+  padding:14px 26px;
+
+  border-radius:16px;
+
+  cursor:pointer;
+
+  font-weight:700;
+
+  font-size:.95rem;
+
+  transition:.3s ease;
+
+  font-family:'Montserrat',sans-serif;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  min-width:140px;
+}
+
+.cookie-buttons button:hover{
+  transform:translateY(-2px);
+}
+
+/* ACCETTA */
+
+.accept-btn{
+
+  background:linear-gradient(
+  90deg,
+  #ff6a00,
+  #ffb300);
+
+  color:white;
+
+  box-shadow:0 8px 20px rgba(255,106,0,.35);
+}
+
+/* RIFIUTA */
+
+.reject-btn{
+
+  background:#eef2f8;
+
+  color:#041b45;
+
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ANIMAZIONE */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  #cookie-banner{
+    left:15px;
+    right:15px;
+    bottom:15px;
+  }
+
+  .cookie-box{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+  .cookie-buttons{
+
+    width:100%;
+  }
+
+  .cookie-buttons button{
+
+    flex:1;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* ELEMENTI */
+
+const cookieBanner =
+document.getElementById('cookie-banner');
+
+const acceptBtn =
+document.getElementById('accept-cookies');
+
+const rejectBtn =
+document.getElementById('reject-cookies');
+
+/* MOSTRA BANNER */
+
+if(!localStorage.getItem('cookieChoice')){
+
+  cookieBanner.style.display = 'block';
+}
+
+/* ACCETTA */
+
+acceptBtn.addEventListener('click', () => {
+
+  localStorage.setItem(
+    'cookieChoice',
+    'accepted'
+  );
+
+  cookieBanner.style.display = 'none';
+
+});
+
+/* RIFIUTA */
+
+rejectBtn.addEventListener('click', () => {
+
+  localStorage.setItem(
+    'cookieChoice',
+    'rejected'
+  );
+
+  cookieBanner.style.display = 'none';
+
+});
+
+</script>
 
 </body>
+
 </html>
 
 
