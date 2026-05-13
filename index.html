@@ -3,232 +3,807 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
 
-<title>Evento</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<style>
+    <title>Ladispoli Summer Sport</title>
+
+    <!-- FONT -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
 body{
-margin:0;
-background:black;
-font-family:Arial;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:#041b45;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-/* contenitore */
+        /*
+        =====================================
+        CONTENITORE GENERALE
+        =====================================
+        */
 
-.container{
-position:relative;
-width:100%;
-max-width:1200px;
-margin:auto;
+        .container{
+
+            position:relative;
+
+            width:100vw;
+            height:100vh;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            overflow:hidden;
+        }
+
+        /*
+        =====================================
+        LOCANDINE
+        =====================================
+        */
+
+        .poster-desktop,
+        .poster-mobile{
+
+            user-select:none;
+
+            pointer-events:none;
+        }
+
+        /*
+        =====================================
+        LOCANDINA DESKTOP
+        =====================================
+        */
+.poster-desktop{
+
+    width:100vw;
+    height:100vh;
+
+    object-fit:contain;
+
+    display:block;
 }
 
-/* locandina */
+        /*
+        =====================================
+        LOCANDINA MOBILE
+        =====================================
+        */
 
-.poster{
-width:100%;
-height:auto;
-display:block;
+.poster-mobile{
+
+    display:none;
+
+    width:100vw;
+    height:100vh;
+
+    object-fit:contain;
 }
 
-/* freccia */
+        /*
+        =====================================
+        FRECCIA
+        =====================================
+        */
 
-.arrow{
-position:absolute;
-right:6%;
-top:52%;
-width:50px;
-cursor:pointer;
+        .guest-arrow{
+
+            position:absolute;
+
+            top:61%;
+            left:57%;
+
+            transform:translate(-50%,-50%);
+
+            width:90px;
+            height:90px;
+
+            border-radius:50%;
+
+            background:linear-gradient(135deg,#ff6a00,#ff9800);
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            text-decoration:none;
+
+            z-index:100;
+
+            box-shadow:
+            0 0 20px rgba(255,106,0,.6),
+            0 10px 30px rgba(0,0,0,.35);
+
+            transition:.3s ease;
+
+            animation:pulse 2s infinite;
+        }
+
+        .guest-arrow:hover{
+
+            transform:translate(-50%,-50%) scale(1.12);
+
+            box-shadow:
+            0 0 35px rgba(255,140,0,.9),
+            0 20px 45px rgba(0,0,0,.45);
+        }
+
+        /*
+        =====================================
+        ICONA FRECCIA
+        =====================================
+        */
+
+        .guest-arrow svg{
+
+            width:58px;
+            height:58px;
+
+            fill:white;
+
+            position:relative;
+
+            left:-5px;
+        }
+
+        /*
+        =====================================
+        SOCIAL CLICKABLE
+        =====================================
+        */
+
+        .social-icon{
+
+            position:absolute;
+
+            z-index:200;
+
+            transition:.3s ease;
+        }
+
+        .social-icon img{
+
+            width:55px;
+            height:55px;
+
+            object-fit:contain;
+
+            display:block;
+
+            aspect-ratio:1/1;
+
+            filter:
+            drop-shadow(0 0 14px rgba(255,106,0,.4));
+        }
+
+        .social-icon:hover{
+
+            transform:scale(1.08);
+        }
+
+        /*
+        =====================================
+        INSTAGRAM DESKTOP
+        =====================================
+        */
+
+        .instagram-icon{
+
+            bottom:-6px;
+            right:250px;
+        }
+
+        /*
+        =====================================
+        FACEBOOK DESKTOP
+        =====================================
+        */
+
+        .facebook-icon{
+
+            bottom:-1.5px;
+            right:200px;
+        }
+
+        /*
+        =====================================
+        INDIRIZZO CLICCABILE
+        =====================================
+        */
+
+.location-link{
+
+    position:absolute;
+
+    bottom:70px;
+
+    left:58%;
+
+    transform:none;
+
+    z-index:200;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:.85rem;
+
+    width:auto;
+
+    text-align:center;
 }
 
-/* indirizzo desktop */
+        /*
+        =====================================
+        ANIMAZIONE
+        =====================================
+        */
 
-.address-desktop{
-position:absolute;
-bottom:13%;
-right:7%;
-display:none;
+        @keyframes pulse{
+
+            0%{
+                transform:translate(-50%,-50%) scale(1);
+            }
+
+            50%{
+                transform:translate(-50%,-50%) scale(1.06);
+            }
+
+            100%{
+                transform:translate(-50%,-50%) scale(1);
+            }
+        }
+
+        /*
+        =====================================
+        TABLET
+        =====================================
+        */
+
+        @media(max-width:1024px){
+
+            .guest-arrow{
+
+                width:75px;
+                height:75px;
+            }
+
+            .guest-arrow svg{
+
+                width:48px;
+                height:48px;
+            }
+        }
+
+        /*
+        =====================================
+        SMARTPHONE
+        =====================================
+        */
+
+        @media(max-width:768px){
+/*
+=====================================
+INDIRIZZO MOBILE
+=====================================
+*/
+
+.location-link{
+
+    bottom:200px;
+
+    left:70%;
+
+    width:70%;
+
+    text-align:center;
+
+    font-size:.85rem;
 }
 
-.address-desktop a{
-color:#1e90ff;
-font-weight:bold;
-text-decoration:none;
-font-size:16px;
+/*
+=====================================
+SOCIAL MOBILE
+=====================================
+*/
+
+.instagram-icon{
+
+    bottom:50px;
+    right:65px;
 }
 
-/* social desktop */
+.facebook-icon{
 
-.social-desktop{
-position:absolute;
-bottom:7%;
-left:50%;
-transform:translateX(-50%);
-text-align:center;
-color:white;
-display:none;
+    bottom:50x;
+    right:45px;
 }
 
-.social-icons{
-margin-top:10px;
-display:flex;
-gap:20px;
-justify-content:center;
+.social-icon img{
+
+    width:50px;
+    height:50px;
 }
+            body{
+                overflow:hidden;
+            }
 
-.social-icons img{
-width:35px;
-}
+            /*
+            NASCONDE DESKTOP
+            */
 
-/* mobile */
+            .poster-desktop{
+                display:none;
+            }
 
-@media (max-width:768px){
+            /*
+            MOSTRA MOBILE
+            */
 
-.container{
-width:100%;
-}
+            .poster-mobile{
+                display:block;
+            }
 
-.arrow{
-top:52%;
-right:5%;
-width:42px;
-}
+            /*
+            FRECCIA MOBILE
+            */
 
-/* indirizzo mobile */
+            .guest-arrow{
 
-.address-mobile{
-position:absolute;
-bottom:15%;
-right:6%;
-text-align:right;
-}
+                width:60px;
+                height:60px;
 
-.address-mobile a{
-color:white;
-text-decoration:none;
-font-size:14px;
-}
+                top:63%;
+                left:74%;
+            }
 
-/* social mobile */
+            .guest-arrow svg{
 
-.social-mobile{
-margin-top:8px;
-display:flex;
-gap:12px;
-justify-content:flex-end;
-}
+                width:36px;
+                height:36px;
 
-.social-mobile img{
-width:26px;
-}
+                left:-3px;
+            }
 
-}
+            /*
+            SOCIAL MOBILE
+            */
 
-/* desktop */
+            .social-icon img{
 
-@media (min-width:769px){
+                width:42px;
+                height:42px;
+            }
 
-.address-desktop{
-display:block;
-}
+            .instagram-icon{
 
-.social-desktop{
-display:block;
-}
+                bottom:-4px;
+                right:52px;
+            }
 
-.address-mobile{
-display:none;
-}
+            .facebook-icon{
 
-}
+                bottom:-4px;
+                right:6px;
+            }
 
-</style>
+            /*
+            LOCATION MOBILE
+            */
+
+            .location-link{
+
+                font-size:.8rem;
+
+                bottom:12px;
+
+                width:80%;
+
+                text-align:center;
+            }
+        }
+
+        /*
+        =====================================
+        SMARTPHONE PICCOLI
+        =====================================
+        */
+
+        @media(max-width:480px){
+
+            .guest-arrow{
+
+                width:55px;
+                height:55px;
+
+                top:63%;
+                left:74%;
+            }
+
+            .guest-arrow svg{
+
+                width:32px;
+                height:32px;
+            }
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<!-- CAMBIA SOLO QUESTO -->
+        <!--
+        =====================================
+        LOCANDINA DESKTOP
+        =====================================
+        -->
 
-<img src="image/ladispoli3.png" class="poster">
+        <img
+            src="image/ladispoli3.png"
+            alt="Ladispoli Summer Sport"
+            class="poster-desktop">
 
-<!-- FRECCIA -->
+        <!--
+        =====================================
+        LOCANDINA SMARTPHONE
+        =====================================
+        -->
 
-<a href="#">
-<img src="freccia.png" class="arrow">
-</a>
+        <img
+            src="image/ladispoli smart1.png"
+            alt="Ladispoli Summer Sport Mobile"
+            class="poster-mobile">
 
-<!-- INDIRIZZO DESKTOP -->
+        <!--
+        =====================================
+        FRECCIA CLICCABILE
+        =====================================
+        -->
 
-<div class="address-desktop">
+        <a
+            href="gueststar.html"
+            class="guest-arrow">
 
-<a href="https://maps.google.com/?q=Lungomare+Regina Elena+148+Ladispoli" target="_blank">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24">
 
-📍 Lungomare Regina Elena, 148 - Ladispoli - RM
+                <path
+                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
 
-</a>
+            </svg>
 
-</div>
+        </a>
 
-<!-- SOCIAL DESKTOP -->
+        <!--
+        =====================================
+        INDIRIZZO CLICCABILE
+        =====================================
+        -->
 
-<div class="social-desktop">
+        <a
+            href="https://maps.google.com/?q=Lungomare+Regina+Elena+20+Ladispoli"
+            target="_blank"
+            class="location-link">
 
-<div>Seguici</div>
+            Lungomare Regina Elena 20 - Ladispoli - RM
 
-<div class="social-icons">
+        </a>
 
-<a href="#">
-<img src="instagram.png">
-</a>
+        <!--
+        =====================================
+        INSTAGRAM
+        =====================================
+        -->
 
-<a href="#">
-<img src="tiktok.png">
-</a>
+        <a
+            href="https://instagram.com/"
+            target="_blank"
+            class="social-icon instagram-icon">
 
-<a href="#">
-<img src="facebook.png">
-</a>
+            <img
+                src="image/insta-removebg-preview.png"
+                alt="Instagram">
 
-</div>
+        </a>
 
-</div>
+        <!--
+        =====================================
+        FACEBOOK
+        =====================================
+        -->
 
-<!-- MOBILE -->
+        <a
+            href="https://facebook.com/"
+            target="_blank"
+            class="social-icon facebook-icon">
 
-<div class="address-mobile">
+            <img
+                src="image/facebook.png"
+                alt="Facebook">
 
-<a href="https://maps.google.com/?q=Lungomare+Regina Elena+148+Ladispoli" target="_blank">
+        </a>
 
-📍 Lungomare Regina Elena, 148 - Ladispoli - RM
+    </div>
 
-</a>
+    <!-- COOKIE BANNER -->
 
-<div class="social-mobile">
+    <div id="cookie-banner">
 
-<a href="#">
-<img src="instagram.png">
-</a>
+      <div class="cookie-box">
 
-<a href="#">
-<img src="tiktok.png">
-</a>
+        <p>
+          Questo sito utilizza esclusivamente cookie tecnici
+          necessari al corretto funzionamento della piattaforma.
+          Nessun dato viene condiviso con terze parti.
+        </p>
 
-<a href="#">
-<img src="facebook.png">
-</a>
+        <div class="cookie-buttons">
 
-</div>
+          <button id="accept-cookies" class="accept-btn">
+            ✓ Accetta
+          </button>
 
-</div>
+          <button id="reject-cookies" class="reject-btn">
+            ✕ Rifiuta
+          </button>
 
-</div>
+        </div>
+
+      </div>
+
+    </div>
+
+<style>
+
+/* COOKIE BANNER */
+
+#cookie-banner{
+
+  position:fixed;
+
+  bottom:25px;
+  left:25px;
+  right:25px;
+
+  z-index:99999;
+
+  display:none;
+
+  animation:fadeUp .5s ease;
+}
+
+/* BOX */
+
+.cookie-box{
+
+  background:rgba(255,255,255,.96);
+
+  backdrop-filter:blur(14px);
+
+  border-radius:24px;
+
+  padding:22px;
+
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+/* TESTO */
+
+.cookie-box p{
+
+  flex:1;
+
+  color:#041b45;
+
+  font-size:.95rem;
+
+  line-height:1.6;
+
+  font-weight:500;
+}
+
+/* BOTTONI */
+
+.cookie-buttons{
+
+  display:flex;
+
+  gap:12px;
+}
+
+.cookie-buttons button{
+
+  border:none;
+
+  padding:14px 26px;
+
+  border-radius:16px;
+
+  cursor:pointer;
+
+  font-weight:700;
+
+  font-size:.95rem;
+
+  transition:.3s ease;
+
+  font-family:'Montserrat',sans-serif;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  min-width:140px;
+}
+
+.cookie-buttons button:hover{
+  transform:translateY(-2px);
+}
+
+/* ACCETTA */
+
+.accept-btn{
+
+  background:linear-gradient(
+  90deg,
+  #ff6a00,
+  #ffb300);
+
+  color:white;
+
+  box-shadow:0 8px 20px rgba(255,106,0,.35);
+}
+
+/* RIFIUTA */
+
+.reject-btn{
+
+  background:#eef2f8;
+
+  color:#041b45;
+
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ANIMAZIONE */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  #cookie-banner{
+    left:15px;
+    right:15px;
+    bottom:15px;
+  }
+
+  .cookie-box{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+
+  .cookie-buttons{
+
+    width:100%;
+  }
+
+  .cookie-buttons button{
+
+    flex:1;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* ELEMENTI */
+
+const cookieBanner =
+document.getElementById('cookie-banner');
+
+const acceptBtn =
+document.getElementById('accept-cookies');
+
+const rejectBtn =
+document.getElementById('reject-cookies');
+
+/* MOSTRA BANNER */
+
+if(!localStorage.getItem('cookieChoice')){
+
+  cookieBanner.style.display = 'block';
+}
+
+/* ACCETTA */
+
+acceptBtn.addEventListener('click', () => {
+
+  localStorage.setItem(
+    'cookieChoice',
+    'accepted'
+  );
+
+  cookieBanner.style.display = 'none';
+
+});
+
+/* RIFIUTA */
+
+rejectBtn.addEventListener('click', () => {
+
+  localStorage.setItem(
+    'cookieChoice',
+    'rejected'
+  );
+
+  cookieBanner.style.display = 'none';
+
+});
+
+</script>
 
 </body>
+
 </html>
-
-
