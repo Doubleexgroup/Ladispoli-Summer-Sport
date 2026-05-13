@@ -1,339 +1,230 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Ladispoli Summer Sport</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evento</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-
-background:#041b45;
-
-width:100%;
-height:100dvh;
-
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#000;
 display:flex;
-align-items:center;
 justify-content:center;
-
-overflow:hidden;
-
-font-family:'Montserrat',sans-serif;
+align-items:center;
+min-height:100vh;
 }
 
-/* AREA LOCANDINA */
+/* CONTENITORE */
 
-.poster-wrapper{
-
+.container{
 position:relative;
-
-width:100vw;
-height:100dvh;
-
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-/* LOCANDINE */
-
-.poster-desktop,
-.poster-mobile{
-
-position:absolute;
-
+max-width:900px;
 width:100%;
-height:100%;
-
-object-fit:contain;
-
-user-select:none;
-pointer-events:none;
 }
 
-.poster-mobile{
-display:none;
+/* LOCANDINA */
+
+.poster{
+width:100%;
+height:auto;
+display:block;
 }
 
 /* FRECCIA */
 
-.guest-arrow{
-
+.arrow{
 position:absolute;
-
-top:60%;
-left:56%;
-
-transform:translate(-50%,-50%);
-
-width:clamp(55px,6vw,90px);
-height:clamp(55px,6vw,90px);
-
-border-radius:50%;
-
-background:linear-gradient(135deg,#ff6a00,#ff9800);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-z-index:50;
-
-text-decoration:none;
-
-box-shadow:
-0 0 20px rgba(255,106,0,.6),
-0 10px 30px rgba(0,0,0,.35);
-
-animation:pulse 2s infinite;
-
-transition:.3s ease;
+right:6%;
+top:52%;
+transform:translateY(-50%);
+width:45px;
+cursor:pointer;
 }
 
-.guest-arrow:hover{
-transform:translate(-50%,-50%) scale(1.1);
-}
+/* SEZIONE SOCIAL DESKTOP */
 
-.guest-arrow svg{
-
-width:60%;
-height:60%;
-
-fill:white;
-
-position:relative;
-left:-3px;
-}
-
-/* SOCIAL */
-
-.social-icon{
-
+.social-desktop{
 position:absolute;
-
-z-index:100;
-
-transition:.3s ease;
-}
-
-.social-icon img{
-
-width:55px;
-height:55px;
-
-filter:drop-shadow(0 0 14px rgba(255,106,0,.4));
-}
-
-.social-icon:hover{
-transform:scale(1.08);
-}
-
-.instagram-icon{
-
-bottom:10px;
-right:120px;
-}
-
-.facebook-icon{
-
-bottom:10px;
-right:60px;
-}
-
-/* LOCATION */
-
-.location-link{
-
-position:absolute;
-
-bottom:70px;
-
-left:58%;
-
+bottom:8%;
+left:50%;
+transform:translateX(-50%);
+text-align:center;
 color:white;
+display:none;
+}
 
+.social-desktop h3{
+margin-bottom:10px;
+}
+
+.icons{
+display:flex;
+gap:18px;
+justify-content:center;
+}
+
+.icons img{
+width:34px;
+}
+
+/* INDIRIZZO DESKTOP */
+
+.address-desktop{
+position:absolute;
+bottom:12%;
+right:6%;
+display:none;
+}
+
+.address-desktop a{
+color:#1e90ff;
+font-weight:bold;
 text-decoration:none;
-
-font-weight:700;
-
-font-size:.85rem;
-}
-
-/* ANIMAZIONE */
-
-@keyframes pulse{
-
-0%{
-transform:translate(-50%,-50%) scale(1);
-}
-
-50%{
-transform:translate(-50%,-50%) scale(1.05);
-}
-
-100%{
-transform:translate(-50%,-50%) scale(1);
-}
-
-}
-
-/* TABLET */
-
-@media(max-width:1024px){
-
-.guest-arrow{
-width:70px;
-height:70px;
-}
-
-.social-icon img{
-width:48px;
-height:48px;
-}
-
+font-size:15px;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-.poster-desktop{
-display:none;
+.container{
+max-width:420px;
 }
 
-.poster-mobile{
+/* freccia allineata con le nostre star */
+
+.arrow{
+right:5%;
+top:50%;
+width:40px;
+}
+
+/* indirizzo mobile */
+
+.address-mobile{
+position:absolute;
+bottom:14%;
+right:6%;
+color:white;
+text-align:right;
+}
+
+.address-mobile a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+/* social mobile sotto indirizzo */
+
+.social-mobile{
+margin-top:8px;
+display:flex;
+gap:12px;
+justify-content:flex-end;
+}
+
+.social-mobile img{
+width:26px;
+}
+
+}
+
+/* DESKTOP */
+
+@media(min-width:769px){
+
+.social-desktop{
 display:block;
 }
 
-/* freccia */
-
-.guest-arrow{
-
-top:64%;
-left:74%;
-
-width:60px;
-height:60px;
+.address-desktop{
+display:block;
 }
 
-/* social */
-
-.instagram-icon{
-bottom:3%;
-right:14%;
-}
-
-.facebook-icon{
-bottom:3%;
-right:6%;
-}
-
-.social-icon img{
-
-width:42px;
-height:42px;
-}
-
-/* location */
-
-.location-link{
-
-left:50%;
-
-transform:translateX(-50%);
-
-bottom:14px;
-
-width:85%;
-
-text-align:center;
-
-font-size:.8rem;
-}
-
-}
-
-/* smartphone piccoli */
-
-@media(max-width:480px){
-
-.guest-arrow{
-
-width:55px;
-height:55px;
+.address-mobile{
+display:none;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="poster-wrapper">
+<div class="container">
 
-<img src="image/ladispoli3.png"
-alt="Ladispoli Summer Sport"
-class="poster-desktop">
+<!-- LOCANDINA (mantieni la tua) -->
+<img src="ladispoli3.png" class="poster">
 
-<img src="image/ladispoli smart1.png"
-alt="Ladispoli Summer Sport Mobile"
-class="poster-mobile">
-
-<a href="gueststar.html" class="guest-arrow">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-
-<path d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
-
-</svg>
-
+<!-- FRECCIA -->
+<a href="#star">
+<img src="freccia.png" class="arrow">
 </a>
 
-<a href="https://maps.google.com/?q=Lungomare+Regina+Elena+20+Ladispoli"
-target="_blank"
-class="location-link">
+<!-- INDIRIZZO DESKTOP -->
+<div class="address-desktop">
+<a href="https://maps.google.com" target="_blank">
+📍 Lungomare Regina Elena 148 - Ladispoli - RM
+</a>
+</div>
 
-Ladispoli - Lungomare Regina Elena - RM
+<!-- SOCIAL DESKTOP -->
+<div class="social-desktop">
 
+<h3>Seguici</h3>
+
+<div class="icons">
+
+<a href="#">
+<img src="instagram.png">
 </a>
 
-<a href="https://instagram.com/"
-target="_blank"
-class="social-icon instagram-icon">
-
-<img src="image/insta-removebg-preview.png" alt="Instagram">
-
+<a href="#">
+<img src="tiktok.png">
 </a>
 
-<a href="https://facebook.com/"
-target="_blank"
-class="social-icon facebook-icon">
-
-<img src="image/facebook.png" alt="Facebook">
-
+<a href="#">
+<img src="facebook.png">
 </a>
 
 </div>
 
-</body>
+</div>
 
+<!-- MOBILE ADDRESS + SOCIAL -->
+
+<div class="address-mobile">
+
+<a href="https://maps.google.com" target="_blank">
+📍 Lungomare Regina Elena 148 - Ladispoli - RM
+</a>
+
+<div class="social-mobile">
+
+<a href="#">
+<img src="instagram.png">
+</a>
+
+<a href="#">
+<img src="tiktok.png">
+</a>
+
+<a href="#">
+<img src="facebook.png">
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
 </html>
 
 
