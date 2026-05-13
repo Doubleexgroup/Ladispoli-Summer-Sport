@@ -3,811 +3,347 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<title>Ladispoli Summer Sport</title>
 
-    <title>Ladispoli Summer Sport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+<style>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+img{
+display:block;
+width:100%;
+height:100%;
+object-fit:contain;
+}
 
 body{
 
-    width:100vw;
-    height:100vh;
+background:#041b45;
 
-    overflow:hidden;
+min-height:100dvh;
 
-    background:#041b45;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+font-family:'Montserrat',sans-serif;
+
+overflow-x:hidden;
 }
 
-        /*
-        =====================================
-        CONTENITORE GENERALE
-        =====================================
-        */
+/* AREA LOCANDINA */
 
-        .container{
+.poster-wrapper{
 
-            position:relative;
+position:relative;
 
-            width:100vw;
-            height:100vh;
+width:100%;
+max-width:1200px;
 
-            display:flex;
-            align-items:center;
-            justify-content:center;
+height:100dvh;
 
-            overflow:hidden;
-        }
-
-        /*
-        =====================================
-        LOCANDINE
-        =====================================
-        */
-
-        .poster-desktop,
-        .poster-mobile{
-
-            user-select:none;
-
-            pointer-events:none;
-        }
-
-        /*
-        =====================================
-        LOCANDINA DESKTOP
-        =====================================
-        */
-.poster-desktop{
-
-    width:100vw;
-    height:100vh;
-
-    object-fit:contain;
-
-    display:block;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-        /*
-        =====================================
-        LOCANDINA MOBILE
-        =====================================
-        */
+/* LOCANDINE */
 
+.poster-desktop,
 .poster-mobile{
 
-    display:none;
+position:absolute;
 
-    width:100vw;
-    height:100vh;
+inset:0;
 
-    object-fit:contain;
+user-select:none;
+pointer-events:none;
 }
 
-        /*
-        =====================================
-        FRECCIA
-        =====================================
-        */
-
-        .guest-arrow{
-
-            position:absolute;
-
-            top:61%;
-            left:57%;
-
-            transform:translate(-50%,-50%);
-
-            width:90px;
-            height:90px;
-
-            border-radius:50%;
-
-            background:linear-gradient(135deg,#ff6a00,#ff9800);
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-
-            text-decoration:none;
-
-            z-index:100;
-
-            box-shadow:
-            0 0 20px rgba(255,106,0,.6),
-            0 10px 30px rgba(0,0,0,.35);
-
-            transition:.3s ease;
-
-            animation:pulse 2s infinite;
-        }
-
-        .guest-arrow:hover{
-
-            transform:translate(-50%,-50%) scale(1.12);
-
-            box-shadow:
-            0 0 35px rgba(255,140,0,.9),
-            0 20px 45px rgba(0,0,0,.45);
-        }
-
-        /*
-        =====================================
-        ICONA FRECCIA
-        =====================================
-        */
-
-        .guest-arrow svg{
-
-            width:58px;
-            height:58px;
-
-            fill:white;
-
-            position:relative;
-
-            left:-5px;
-        }
-
-        /*
-        =====================================
-        SOCIAL CLICKABLE
-        =====================================
-        */
-
-        .social-icon{
-
-            position:absolute;
-
-            z-index:200;
-
-            transition:.3s ease;
-        }
-
-        .social-icon img{
-
-            width:55px;
-            height:55px;
-
-            object-fit:contain;
-
-            display:block;
-
-            aspect-ratio:1/1;
-
-            filter:
-            drop-shadow(0 0 14px rgba(255,106,0,.4));
-        }
-
-        .social-icon:hover{
-
-            transform:scale(1.08);
-        }
-
-        /*
-        =====================================
-        INSTAGRAM DESKTOP
-        =====================================
-        */
-
-        .instagram-icon{
-
-            bottom:-6px;
-            right:250px;
-        }
-
-        /*
-        =====================================
-        FACEBOOK DESKTOP
-        =====================================
-        */
-
-        .facebook-icon{
-
-            bottom:-1.5px;
-            right:200px;
-        }
-
-        /*
-        =====================================
-        INDIRIZZO CLICCABILE
-        =====================================
-        */
-
-.location-link{
-
-    position:absolute;
-
-    bottom:70px;
-
-    left:58%;
-
-    transform:none;
-
-    z-index:200;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:700;
-
-    font-size:.85rem;
-
-    width:auto;
-
-    text-align:center;
+.poster-mobile{
+display:none;
 }
 
-        /*
-        =====================================
-        ANIMAZIONE
-        =====================================
-        */
+/* FRECCIA */
 
-        @keyframes pulse{
+.guest-arrow{
 
-            0%{
-                transform:translate(-50%,-50%) scale(1);
-            }
+position:absolute;
 
-            50%{
-                transform:translate(-50%,-50%) scale(1.06);
-            }
+/* POSIZIONE PRECISA SULLA LOCANDINA */
 
-            100%{
-                transform:translate(-50%,-50%) scale(1);
-            }
-        }
+top:60%;
+left:56%;
 
-        /*
-        =====================================
-        TABLET
-        =====================================
-        */
+transform:translate(-50%,-50%);
 
-        @media(max-width:1024px){
+width:clamp(55px,7vw,90px);
+height:clamp(55px,7vw,90px);
 
-            .guest-arrow{
+border-radius:50%;
 
-                width:75px;
-                height:75px;
-            }
+background:linear-gradient(135deg,#ff6a00,#ff9800);
 
-            .guest-arrow svg{
+display:flex;
+align-items:center;
+justify-content:center;
 
-                width:48px;
-                height:48px;
-            }
-        }
+z-index:50;
 
-        /*
-        =====================================
-        SMARTPHONE
-        =====================================
-        */
+text-decoration:none;
 
-        @media(max-width:768px){
-/*
-=====================================
-INDIRIZZO MOBILE
-=====================================
-*/
+box-shadow:
+0 0 20px rgba(255,106,0,.6),
+0 10px 30px rgba(0,0,0,.35);
 
-.location-link{
+animation:pulse 2s infinite;
 
-    bottom:200px;
-
-    left:70%;
-
-    width:70%;
-
-    text-align:center;
-
-    font-size:.85rem;
+transition:.3s ease;
 }
 
-/*
-=====================================
-SOCIAL MOBILE
-=====================================
-*/
-
-.instagram-icon{
-
-    bottom:50px;
-    right:65px;
+.guest-arrow:hover{
+transform:translate(-50%,-50%) scale(1.1);
 }
 
-.facebook-icon{
+.guest-arrow svg{
 
-    bottom:50x;
-    right:45px;
+width:60%;
+height:60%;
+
+fill:white;
+
+position:relative;
+left:-3px;
+}
+
+/* SOCIAL */
+
+.social-icon{
+
+position:absolute;
+
+z-index:100;
+
+transition:.3s ease;
 }
 
 .social-icon img{
 
-    width:50px;
-    height:50px;
-}
-            body{
-                overflow:hidden;
-            }
+width:55px;
+height:55px;
 
-            /*
-            NASCONDE DESKTOP
-            */
-
-            .poster-desktop{
-                display:none;
-            }
-
-            /*
-            MOSTRA MOBILE
-            */
-
-            .poster-mobile{
-                display:block;
-            }
-
-            /*
-            FRECCIA MOBILE
-            */
-
-            .guest-arrow{
-
-                width:60px;
-                height:60px;
-
-                top:63%;
-                left:74%;
-            }
-
-            .guest-arrow svg{
-
-                width:36px;
-                height:36px;
-
-                left:-3px;
-            }
-
-            /*
-            SOCIAL MOBILE
-            */
-
-            .social-icon img{
-
-                width:42px;
-                height:42px;
-            }
-
-            .instagram-icon{
-
-                bottom:-4px;
-                right:52px;
-            }
-
-            .facebook-icon{
-
-                bottom:-4px;
-                right:6px;
-            }
-
-            /*
-            LOCATION MOBILE
-            */
-
-            .location-link{
-
-                font-size:.8rem;
-
-                bottom:12px;
-
-                width:80%;
-
-                text-align:center;
-            }
-        }
-
-        /*
-        =====================================
-        SMARTPHONE PICCOLI
-        =====================================
-        */
-
-        @media(max-width:480px){
-
-            .guest-arrow{
-
-                width:55px;
-                height:55px;
-
-                top:63%;
-                left:74%;
-            }
-
-            .guest-arrow svg{
-
-                width:32px;
-                height:32px;
-            }
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <div class="container">
-
-        <!--
-        =====================================
-        LOCANDINA DESKTOP
-        =====================================
-        -->
-
-        <img
-            src="image/ladispoli3.png"
-            alt="Ladispoli Summer Sport"
-            class="poster-desktop">
-
-        <!--
-        =====================================
-        LOCANDINA SMARTPHONE
-        =====================================
-        -->
-
-        <img
-            src="image/ladispoli smart1.png"
-            alt="Ladispoli Summer Sport Mobile"
-            class="poster-mobile">
-
-        <!--
-        =====================================
-        FRECCIA CLICCABILE
-        =====================================
-        -->
-
-        <a
-            href="gueststar.html"
-            class="guest-arrow">
-
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24">
-
-                <path
-                    d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
-
-            </svg>
-
-        </a>
-
-        <!--
-        =====================================
-        INDIRIZZO CLICCABILE
-        =====================================
-        -->
-
-        <a
-            href="https://maps.google.com/?q=Lungomare+Regina+Elena+20+Ladispoli"
-            target="_blank"
-            class="location-link">
-
-            Lungomare Regina Elena 20 - RM
-
-        </a>
-
-        <!--
-        =====================================
-        INSTAGRAM
-        =====================================
-        -->
-
-        <a
-            href="https://instagram.com/"
-            target="_blank"
-            class="social-icon instagram-icon">
-
-            <img
-                src="image/insta-removebg-preview.png"
-                alt="Instagram">
-
-        </a>
-
-        <!--
-        =====================================
-        FACEBOOK
-        =====================================
-        -->
-
-        <a
-            href="https://facebook.com/"
-            target="_blank"
-            class="social-icon facebook-icon">
-
-            <img
-                src="image/facebook.png"
-                alt="Facebook">
-
-        </a>
-
-    </div>
-
-    <!-- COOKIE BANNER -->
-
-    <div id="cookie-banner">
-
-      <div class="cookie-box">
-
-        <p>
-          Questo sito utilizza esclusivamente cookie tecnici
-          necessari al corretto funzionamento della piattaforma.
-          Nessun dato viene condiviso con terze parti.
-        </p>
-
-        <div class="cookie-buttons">
-
-          <button id="accept-cookies" class="accept-btn">
-            ✓ Accetta
-          </button>
-
-          <button id="reject-cookies" class="reject-btn">
-            ✕ Rifiuta
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-<style>
-
-/* COOKIE BANNER */
-
-#cookie-banner{
-
-  position:fixed;
-
-  bottom:25px;
-  left:25px;
-  right:25px;
-
-  z-index:99999;
-
-  display:none;
-
-  animation:fadeUp .5s ease;
+filter:drop-shadow(0 0 14px rgba(255,106,0,.4));
 }
 
-/* BOX */
-
-.cookie-box{
-
-  background:rgba(255,255,255,.96);
-
-  backdrop-filter:blur(14px);
-
-  border-radius:24px;
-
-  padding:22px;
-
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-  display:flex;
-
-  align-items:center;
-  justify-content:space-between;
-
-  gap:20px;
-
-  flex-wrap:wrap;
+.social-icon:hover{
+transform:scale(1.08);
 }
 
-/* TESTO */
+.instagram-icon{
 
-.cookie-box p{
-
-  flex:1;
-
-  color:#041b45;
-
-  font-size:.95rem;
-
-  line-height:1.6;
-
-  font-weight:500;
+bottom:10px;
+right:120px;
 }
 
-/* BOTTONI */
+.facebook-icon{
 
-.cookie-buttons{
-
-  display:flex;
-
-  gap:12px;
+bottom:10px;
+right:60px;
 }
 
-.cookie-buttons button{
+/* LOCATION */
 
-  border:none;
+.location-link{
 
-  padding:14px 26px;
+position:absolute;
 
-  border-radius:16px;
+bottom:70px;
 
-  cursor:pointer;
+left:58%;
 
-  font-weight:700;
+color:white;
 
-  font-size:.95rem;
+text-decoration:none;
 
-  transition:.3s ease;
+font-weight:700;
 
-  font-family:'Montserrat',sans-serif;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  gap:8px;
-
-  min-width:140px;
-}
-
-.cookie-buttons button:hover{
-  transform:translateY(-2px);
-}
-
-/* ACCETTA */
-
-.accept-btn{
-
-  background:linear-gradient(
-  90deg,
-  #ff6a00,
-  #ffb300);
-
-  color:white;
-
-  box-shadow:0 8px 20px rgba(255,106,0,.35);
-}
-
-/* RIFIUTA */
-
-.reject-btn{
-
-  background:#eef2f8;
-
-  color:#041b45;
-
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
+font-size:.85rem;
 }
 
 /* ANIMAZIONE */
 
-@keyframes fadeUp{
+@keyframes pulse{
 
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
+0%{
+transform:translate(-50%,-50%) scale(1);
+}
 
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+50%{
+transform:translate(-50%,-50%) scale(1.05);
+}
+
+100%{
+transform:translate(-50%,-50%) scale(1);
+}
+
+}
+
+/* TABLET */
+
+@media(max-width:1024px){
+
+.guest-arrow{
+width:70px;
+height:70px;
+}
+
+.social-icon img{
+width:48px;
+height:48px;
+}
+
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-  #cookie-banner{
-    left:15px;
-    right:15px;
-    bottom:15px;
-  }
+.poster-desktop{
+display:none;
+}
 
-  .cookie-box{
+.poster-mobile{
+display:block;
+}
 
-    flex-direction:column;
+/* freccia ancorata */
 
-    align-items:flex-start;
-  }
+.guest-arrow{
 
-  .cookie-buttons{
+top:64%;
+left:74%;
 
-    width:100%;
-  }
+width:60px;
+height:60px;
+}
 
-  .cookie-buttons button{
+/* social */
 
-    flex:1;
-  }
+.instagram-icon{
+
+bottom:3%;
+right:14%;
+}
+
+.facebook-icon{
+
+bottom:3%;
+right:6%;
+}
+
+.social-icon img{
+
+width:42px;
+height:42px;
+}
+
+/* location */
+
+.location-link{
+
+left:50%;
+
+transform:translateX(-50%);
+
+bottom:14px;
+
+width:85%;
+
+text-align:center;
+
+font-size:.8rem;
+}
+
+}
+
+/* smartphone piccoli */
+
+@media(max-width:480px){
+
+.guest-arrow{
+
+width:55px;
+height:55px;
+}
 
 }
 
 </style>
 
-<script>
+</head>
 
-/* ELEMENTI */
+<body>
 
-const cookieBanner =
-document.getElementById('cookie-banner');
+<div class="poster-wrapper">
 
-const acceptBtn =
-document.getElementById('accept-cookies');
+<img src="image/ladispoli3.png"
+alt="Ladispoli Summer Sport"
+class="poster-desktop">
 
-const rejectBtn =
-document.getElementById('reject-cookies');
+<img src="image/ladispoli smart1.png"
+alt="Ladispoli Summer Sport Mobile"
+class="poster-mobile">
 
-/* MOSTRA BANNER */
+<a href="gueststar.html" class="guest-arrow">
 
-if(!localStorage.getItem('cookieChoice')){
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 
-  cookieBanner.style.display = 'block';
-}
+<path d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
 
-/* ACCETTA */
+</svg>
 
-acceptBtn.addEventListener('click', () => {
+</a>
 
-  localStorage.setItem(
-    'cookieChoice',
-    'accepted'
-  );
+<a href="https://maps.google.com/?q=Lungomare+Regina+Elena+20+Ladispoli"
+target="_blank"
+class="location-link">
 
-  cookieBanner.style.display = 'none';
+Ladispoli - Lungomare Regina Elena - RM
 
-});
+</a>
 
-/* RIFIUTA */
+<a href="https://instagram.com/"
+target="_blank"
+class="social-icon instagram-icon">
 
-rejectBtn.addEventListener('click', () => {
+<img src="image/insta-removebg-preview.png" alt="Instagram">
 
-  localStorage.setItem(
-    'cookieChoice',
-    'rejected'
-  );
+</a>
 
-  cookieBanner.style.display = 'none';
+<a href="https://facebook.com/"
+target="_blank"
+class="social-icon facebook-icon">
 
-});
+<img src="image/facebook.png" alt="Facebook">
 
-</script>
+</a>
+
+</div>
 
 </body>
 
 </html>
-
 
 
 
