@@ -233,10 +233,11 @@ body{
         }
 
         /*
-        =====================================
-        INDIRIZZO CLICCABILE
-        =====================================
-        */
+/*
+=====================================
+INDIRIZZO CLICCABILE
+=====================================
+*/
 
 .location-link{
 
@@ -306,9 +307,31 @@ body{
         display:block;
     }
 }
-    }
+
+
+/* DESKTOP */
+.desktop-address{
+    display:inline;
 }
 
+.mobile-address{
+    display:none;
+}
+
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .desktop-address{
+        display:none;
+    }
+
+    .mobile-address{
+        display:block;
+
+        text-align:left;
+    }
+}
         /*
         =====================================
         ANIMAZIONE
@@ -549,7 +572,7 @@ SOCIAL MOBILE
         -->
 
         <img
-            src="image/prova smart2.png"
+            src="image/ladispoli smart 10.png"
             alt="Ladispoli Summer Sport Mobile"
             class="poster-mobile">
 
@@ -580,9 +603,15 @@ SOCIAL MOBILE
         =====================================
         -->
 
-       <a href="#" class="location-link">
-    Ladispoli<br>
-    Lungomare Regina Elena 148
+<a href="#" class="location-link">
+    <span class="desktop-address">
+        Ladispoli - Lungomare Regina Elena 148 - Ladispoli (RM)
+    </span>
+
+    <span class="mobile-address">
+        Ladispoli<br>
+        Lungomare Regina Elena 148 - Ladispoli (RM)
+    </span>
 </a>
         <!--
         =====================================
