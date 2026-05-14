@@ -256,13 +256,34 @@ body{
 
     font-weight:700;
 
-    font-size:.95rem;
+    font-size:clamp(1rem, 2vw, 1.4rem);
 
-    width:auto;
+    width:240px;
 
     text-align:center;
+
+    line-height:1.4;
+
+    white-space:normal;
+
+    font-family:Arial, sans-serif;
 }
 
+@media(max-width:768px){
+
+    .location-link{
+
+        left:50%;
+
+        transform:translateX(-50%);
+
+        bottom:15px;
+
+        width:80%;
+
+        font-size:1.1rem;
+    }
+}
         /*
         =====================================
         ANIMAZIONE
@@ -514,15 +535,10 @@ SOCIAL MOBILE
         =====================================
         -->
 
-        <a
-            href="https://maps.google.com/?q=Lungomare+Regina+Elena+20+Ladispoli"
-            target="_blank"
-            class="location-link">
-
-            Lungomare Regina Elena 20 - Ladispoli - RM
-
-        </a>
-
+       <a href="#" class="location-link">
+    Lungomare Regina Elena 148<br>
+    Ladispoli (RM)
+</a>
         <!--
         =====================================
         INSTAGRAM
