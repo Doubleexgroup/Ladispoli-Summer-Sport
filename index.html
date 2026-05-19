@@ -1,123 +1,290 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Double Ex</title>
+<title>Ladispoli Summer Sport</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
 padding:0;
-background:black;
-font-family:Arial, Helvetica, sans-serif;
-overflow:hidden;
+width:100%;
+min-height:100dvh;
+background:#041b45;
+font-family:'Montserrat',sans-serif;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow-x:hidden;
 }
+
+/* CONTAINER */
 
 .container{
 position:relative;
-width:100vw;
-height:100vh;
+width:100%;
+min-height:100dvh;
 display:flex;
+align-items:center;
 justify-content:center;
-align-items:center;
+overflow:hidden;
 }
 
-.logo{
-width:320px;
+/* POSTER */
+
+.poster-desktop,
+.poster-mobile{
+width:100%;
+height:100%;
+object-fit:contain;
+user-select:none;
+pointer-events:none;
 }
 
-/* SOCIAL + INDIRIZZO */
+.poster-desktop{
+display:block;
+}
 
-.bottom-bar{
+.poster-mobile{
+display:none;
+}
+
+/* FRECCIA */
+
+.guest-arrow{
 position:absolute;
-bottom:30px;
-right:40px;
+top:66%;
+left:82%;
+width:70px;
+height:70px;
+border-radius:50%;
+background:linear-gradient(135deg,#ff6a00,#ff2d00);
 display:flex;
 align-items:center;
-gap:15px;
+justify-content:center;
+box-shadow:
+0 0 20px rgba(255,106,0,.6),
+0 10px 30px rgba(0,0,0,.35);
+transition:.3s ease;
+animation:pulse 2s infinite;
+z-index:200;
+}
+
+.guest-arrow svg{
+width:36px;
+height:36px;
+fill:white;
+position:relative;
+left:-5px;
 }
 
 /* SOCIAL */
 
-.social{
-display:flex;
-gap:12px;
+.social-icon{
+position:absolute;
+z-index:200;
+transition:.3s ease;
 }
 
-.social img{
-width:28px;
-height:28px;
+.social-icon img{
+width:42px;
+height:42px;
+object-fit:contain;
+display:block;
+filter:drop-shadow(0 0 14px rgba(255,106,0,.4));
+}
+
+/* SOCIAL DESKTOP */
+
+.instagram-icon{
+bottom:-10px;
+right:250px;
+}
+
+.facebook-icon{
+bottom:-8px;
+right:200px;
 }
 
 /* INDIRIZZO */
 
-.address{
-color:white;
-font-size:16px;
-text-decoration:none;
-}
-
-/* MOBILE */
-
-@media (max-width:768px){
-
-.container{
-height:100dvh;
-}
-
-.logo{
-width:220px;
-}
-
-.bottom-bar{
+.location-link{
 position:absolute;
-bottom:15px;
-right:15px;
-gap:10px;
+bottom:25px;
+right:30px;
+z-index:200;
+color:white;
+text-decoration:none;
+font-size:.9rem;
+line-height:1.4;
+font-family:Arial,sans-serif;
+text-align:right;
 }
 
-.social img{
-width:24px;
-height:24px;
+.desktop-address{
+display:inline;
 }
 
-.address{
-font-size:12px;
+.mobile-address{
+display:none;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:768px){
+
+.poster-desktop{
+display:none;
+}
+
+.poster-mobile{
+display:block;
+}
+
+/* SOCIAL VICINO LOGO */
+
+.instagram-icon{
+bottom:120px;
+right:90px;
+}
+
+.facebook-icon{
+bottom:120px;
+right:40px;
+}
+
+/* INDIRIZZO */
+
+.location-link{
+bottom:75px;
+right:20px;
+font-size:.8rem;
+display:flex;
+flex-direction:column;
+align-items:flex-end;
+}
+
+.desktop-address{
+display:none;
+}
+
+.mobile-address{
+display:block;
+}
+
+}
+
+/* SMARTPHONE PICCOLI */
+
+@media(max-width:480px){
+
+.guest-arrow{
+width:55px;
+height:55px;
+top:66%;
+left:82%;
+}
+
+.guest-arrow svg{
+width:32px;
+height:32px;
+}
+
+}
+
+/* ANIMAZIONE */
+
+@keyframes pulse{
+
+0%{
+transform:translate(-50%,-50%) scale(1);
+}
+
+50%{
+transform:translate(-50%,-50%) scale(1.06);
+}
+
+100%{
+transform:translate(-50%,-50%) scale(1);
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<img class="logo" src="logo.png">
+<!-- POSTER DESKTOP -->
 
-<div class="bottom-bar">
+<img src="image/Ladispoli corretta.png"
+alt="Ladispoli Summer Sport"
+class="poster-desktop">
 
-<div class="social">
+<!-- POSTER MOBILE -->
 
-<a href="https://instagram.com" target="_blank">
-<img src="instagram.png">
+<img src="image/ladispoli smart 10.png"
+alt="Ladispoli Summer Sport Mobile"
+class="poster-mobile">
+
+<!-- FRECCIA -->
+
+<a href="gueststar.html" class="guest-arrow">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+<path d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
+
+</svg>
+
 </a>
 
-<a href="https://facebook.com" target="_blank">
-<img src="facebook.png">
+<!-- INDIRIZZO -->
+
+<a href="https://www.google.com/maps?q=Lungomare+Regina+Elena+148+Ladispoli"
+class="location-link">
+
+<span class="desktop-address">
+Lungomare Regina Elena 148 - Ladispoli (RM)
+</span>
+
+<span class="mobile-address">
+Ladispoli<br>
+Lungomare Regina Elena 148 (RM)
+</span>
+
 </a>
 
-</div>
+<!-- INSTAGRAM -->
 
-<a class="address" href="https://maps.google.com/?q=Ladispoli">
-Ladispoli
+<a href="https://www.instagram.com/ladispoli_official/?hl=it/"
+target="_blank"
+class="social-icon instagram-icon">
+
+<img src="image/insta-removebg-preview.png" alt="Instagram">
+
 </a>
 
-</div>
+<!-- FACEBOOK -->
+
+<a href="https://www.facebook.com/comuneladispoli/?locale=it_IT/"
+target="_blank"
+class="social-icon facebook-icon">
+
+<img src="image/facebook.png" alt="Facebook">
+
+</a>
 
 </div>
 
