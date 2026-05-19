@@ -9,7 +9,6 @@
 <title>Ladispoli Summer Sport</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -30,8 +29,6 @@ align-items:center;
 justify-content:center;
 }
 
-/* CONTAINER */
-
 .container{
 position:relative;
 width:100vw;
@@ -41,8 +38,6 @@ align-items:center;
 justify-content:center;
 overflow:hidden;
 }
-
-/* POSTER */
 
 .poster-desktop,
 .poster-mobile{
@@ -64,8 +59,6 @@ height:100vh;
 object-fit:contain;
 }
 
-/* FRECCIA */
-
 .guest-arrow{
 position:absolute;
 top:61%;
@@ -80,18 +73,8 @@ align-items:center;
 justify-content:center;
 text-decoration:none;
 z-index:100;
-box-shadow:
-0 0 20px rgba(255,106,0,.6),
-0 10px 30px rgba(0,0,0,.35);
+box-shadow:0 0 20px rgba(255,106,0,.6),0 10px 30px rgba(0,0,0,.35);
 transition:.3s ease;
-animation:pulse 2s infinite;
-}
-
-.guest-arrow:hover{
-transform:translate(-50%,-50%) scale(1.12);
-box-shadow:
-0 0 35px rgba(255,140,0,.9),
-0 20px 45px rgba(0,0,0,.45);
 }
 
 .guest-arrow svg{
@@ -101,8 +84,6 @@ fill:white;
 position:relative;
 left:-5px;
 }
-
-/* SOCIAL */
 
 .social-icon{
 position:absolute;
@@ -115,15 +96,7 @@ width:60px;
 height:60px;
 object-fit:contain;
 display:block;
-aspect-ratio:1/1;
-filter:drop-shadow(0 0 14px rgba(255,106,0,.4));
 }
-
-.social-icon:hover{
-transform:scale(1.08);
-}
-
-/* SOCIAL DESKTOP */
 
 .instagram-icon{
 bottom:-10px;
@@ -135,12 +108,11 @@ bottom:-8px;
 right:200px;
 }
 
-/* INDIRIZZO */
-
 .location-link{
 position:absolute;
 bottom:18px;
 left:53%;
+transform:none;
 z-index:200;
 color:white;
 text-decoration:none;
@@ -149,7 +121,6 @@ font-size:clamp(1.1rem,2.1vw,1.5rem);
 width:320px;
 text-align:center;
 line-height:1.4;
-white-space:nowrap;
 font-family:Arial,sans-serif;
 }
 
@@ -161,39 +132,9 @@ display:inline;
 display:none;
 }
 
-/* ANIMAZIONE */
-
-@keyframes pulse{
-0%{transform:translate(-50%,-50%) scale(1);}
-50%{transform:translate(-50%,-50%) scale(1.06);}
-100%{transform:translate(-50%,-50%) scale(1);}
-}
-
-/* TABLET */
-
-@media(max-width:1024px){
-
-.guest-arrow{
-width:75px;
-height:75px;
-}
-
-.guest-arrow svg{
-width:48px;
-height:48px;
-}
-
-}
-
-/* MOBILE */
+/* ---------------- MOBILE ---------------- */
 
 @media(max-width:768px){
-
-body{
-overflow:hidden;
-}
-
-/* poster */
 
 .poster-desktop{
 display:none;
@@ -203,7 +144,7 @@ display:none;
 display:block;
 }
 
-/* freccia */
+/* FRECCIA */
 
 .guest-arrow{
 width:60px;
@@ -218,40 +159,42 @@ height:36px;
 left:-3px;
 }
 
-/* social */
+/* SOCIAL ACCANTO LOGO DOUBLEEX */
 
 .social-icon img{
-width:50px;
-height:50px;
+width:46px;
+height:46px;
 }
 
 .instagram-icon{
-bottom:230px;
+bottom:220px;
 right:95px;
 }
 
 .facebook-icon{
-bottom:230px;
-right:45px;
+bottom:220px;
+right:40px;
 }
 
-/* indirizzo */
+/* INDIRIZZO SOTTO LOGO DOUBLEEX */
 
 .location-link{
-position:absolute;
-bottom:180px;
-left:25px;
-width:auto;
-text-align:left;
-font-size:1rem;
-font-weight:700;
-line-height:1.35;
+
+bottom:165px;
+right:20px;
+left:auto;
+
+text-align:right;
+
+font-size:0.95rem;
+
 display:flex;
 flex-direction:column;
-align-items:flex-start;
+align-items:flex-end;
+
 }
 
-/* gestione testo */
+/* NASCONDI VERSIONE DESKTOP */
 
 .desktop-address{
 display:none;
@@ -259,24 +202,6 @@ display:none;
 
 .mobile-address{
 display:block;
-}
-
-}
-
-/* smartphone piccoli */
-
-@media(max-width:480px){
-
-.guest-arrow{
-width:55px;
-height:55px;
-top:66%;
-left:82%;
-}
-
-.guest-arrow svg{
-width:32px;
-height:32px;
 }
 
 }
@@ -289,9 +214,13 @@ height:32px;
 
 <div class="container">
 
-<img src="image/Ladispoli corretta.png" alt="Ladispoli Summer Sport" class="poster-desktop">
+<img src="image/Ladispoli corretta.png"
+alt="Ladispoli Summer Sport"
+class="poster-desktop">
 
-<img src="image/ladispoli smart 10.png" alt="Ladispoli Summer Sport Mobile" class="poster-mobile">
+<img src="image/ladispoli smart 10.png"
+alt="Ladispoli Summer Sport Mobile"
+class="poster-mobile">
 
 <a href="gueststar.html" class="guest-arrow">
 
@@ -311,24 +240,31 @@ Lungomare Regina Elena 148 - Ladispoli (RM)
 
 <span class="mobile-address">
 Ladispoli<br>
-Lungomare Regina Elena 148 - (RM)
+Lungomare Regina Elena 148 (RM)
 </span>
 
 </a>
 
-<a href="https://instagram.com/" target="_blank" class="social-icon instagram-icon">
+<a href="https://instagram.com/"
+target="_blank"
+class="social-icon instagram-icon">
 
-<img src="image/insta-removebg-preview.png" alt="Instagram">
+<img src="image/insta-removebg-preview.png"
+alt="Instagram">
 
 </a>
 
-<a href="https://facebook.com/" target="_blank" class="social-icon facebook-icon">
+<a href="https://facebook.com/"
+target="_blank"
+class="social-icon facebook-icon">
 
-<img src="image/facebook.png" alt="Facebook">
+<img src="image/facebook.png"
+alt="Facebook">
 
 </a>
 
 </div>
 
 </body>
+
 </html>
