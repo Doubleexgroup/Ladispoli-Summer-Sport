@@ -57,12 +57,12 @@ display:block;
 display:none;
 }
 
-/* FRECCIA */
+/* FRECCIA DESKTOP */
 
 .guest-arrow{
 position:absolute;
-top:66%;
-left:82%;
+top:60%;
+left:64%;
 width:70px;
 height:70px;
 border-radius:50%;
@@ -73,7 +73,6 @@ justify-content:center;
 box-shadow:
 0 0 20px rgba(255,106,0,.6),
 0 10px 30px rgba(0,0,0,.35);
-transition:.3s ease;
 animation:pulse 2s infinite;
 z-index:200;
 }
@@ -83,7 +82,7 @@ width:36px;
 height:36px;
 fill:white;
 position:relative;
-left:-5px;
+left:-4px;
 }
 
 /* SOCIAL */
@@ -95,38 +94,38 @@ transition:.3s ease;
 }
 
 .social-icon img{
-width:42px;
-height:42px;
+width:60px;
+height:60px;
 object-fit:contain;
-display:block;
 filter:drop-shadow(0 0 14px rgba(255,106,0,.4));
 }
 
-/* SOCIAL DESKTOP */
+/* SOCIAL SOTTO "SEGUICI SU" */
 
 .instagram-icon{
-bottom:-10px;
-right:250px;
+bottom:110px;
+right:290px;
 }
 
 .facebook-icon{
-bottom:-8px;
-right:200px;
+bottom:110px;
+right:210px;
 }
 
-/* INDIRIZZO */
+/* INDIRIZZO CENTRO MAP */
 
 .location-link{
 position:absolute;
-bottom:25px;
-right:30px;
+bottom:85px;
+left:50%;
+transform:translateX(-50%);
 z-index:200;
 color:white;
 text-decoration:none;
-font-size:.9rem;
+font-size:1.2rem;
 line-height:1.4;
 font-family:Arial,sans-serif;
-text-align:right;
+text-align:center;
 }
 
 .desktop-address{
@@ -149,24 +148,32 @@ display:none;
 display:block;
 }
 
-/* SOCIAL VICINO LOGO */
+/* SOCIAL VICINO LOGO VIOLA */
 
 .instagram-icon{
-bottom:120px;
+bottom:115px;
 right:90px;
 }
 
 .facebook-icon{
-bottom:120px;
-right:40px;
+bottom:115px;
+right:35px;
 }
 
-/* INDIRIZZO */
+.social-icon img{
+width:42px;
+height:42px;
+}
+
+/* INDIRIZZO SOTTO SOCIAL */
 
 .location-link{
-bottom:75px;
+bottom:65px;
 right:20px;
+left:auto;
+transform:none;
 font-size:.8rem;
+text-align:right;
 display:flex;
 flex-direction:column;
 align-items:flex-end;
@@ -180,22 +187,16 @@ display:none;
 display:block;
 }
 
-}
-
-/* SMARTPHONE PICCOLI */
-
-@media(max-width:480px){
-
 .guest-arrow{
-width:55px;
-height:55px;
 top:66%;
 left:82%;
+width:55px;
+height:55px;
 }
 
 .guest-arrow svg{
-width:32px;
-height:32px;
+width:30px;
+height:30px;
 }
 
 }
@@ -204,17 +205,11 @@ height:32px;
 
 @keyframes pulse{
 
-0%{
-transform:translate(-50%,-50%) scale(1);
-}
+0%{transform:scale(1);}
 
-50%{
-transform:translate(-50%,-50%) scale(1.06);
-}
+50%{transform:scale(1.08);}
 
-100%{
-transform:translate(-50%,-50%) scale(1);
-}
+100%{transform:scale(1);}
 
 }
 
