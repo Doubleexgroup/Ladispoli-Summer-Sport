@@ -29,6 +29,8 @@ align-items:center;
 justify-content:center;
 }
 
+/* CONTENITORE */
+
 .container{
 position:relative;
 width:100vw;
@@ -38,6 +40,8 @@ align-items:center;
 justify-content:center;
 overflow:hidden;
 }
+
+/* POSTER */
 
 .poster-desktop,
 .poster-mobile{
@@ -59,70 +63,125 @@ height:100vh;
 object-fit:contain;
 }
 
+/* FRECCIA */
+
 .guest-arrow{
+
 position:absolute;
+
 top:61%;
 left:57%;
+
 transform:translate(-50%,-50%);
+
 width:90px;
 height:90px;
+
 border-radius:50%;
+
 background:linear-gradient(135deg,#ff6a00,#ff9800);
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 text-decoration:none;
+
 z-index:100;
-box-shadow:0 0 20px rgba(255,106,0,.6),0 10px 30px rgba(0,0,0,.35);
+
+box-shadow:
+0 0 20px rgba(255,106,0,.6),
+0 10px 30px rgba(0,0,0,.35);
+
 transition:.3s ease;
+
 }
 
 .guest-arrow svg{
+
 width:58px;
 height:58px;
+
 fill:white;
+
 position:relative;
+
 left:-5px;
+
 }
 
+/* SOCIAL */
+
 .social-icon{
+
 position:absolute;
+
 z-index:200;
+
 transition:.3s ease;
+
 }
 
 .social-icon img{
+
 width:60px;
 height:60px;
+
 object-fit:contain;
+
 display:block;
+
 }
 
+/* POSIZIONE DESKTOP */
+
 .instagram-icon{
+
 bottom:-10px;
 right:250px;
+
 }
 
 .facebook-icon{
+
 bottom:-8px;
 right:200px;
+
 }
 
+/* INDIRIZZO */
+
 .location-link{
+
 position:absolute;
+
 bottom:18px;
+
 left:53%;
+
 transform:none;
+
 z-index:200;
+
 color:white;
+
 text-decoration:none;
+
 font-weight:700;
+
 font-size:clamp(1.1rem,2.1vw,1.5rem);
+
 width:320px;
+
 text-align:center;
+
 line-height:1.4;
-font-family:Arial,sans-serif;
+
+font-family:Arial, sans-serif;
+
 }
+
+/* TESTO */
 
 .desktop-address{
 display:inline;
@@ -132,7 +191,9 @@ display:inline;
 display:none;
 }
 
-/* ---------------- MOBILE ---------------- */
+/* -------------------------------- */
+/* MOBILE */
+/* -------------------------------- */
 
 @media(max-width:768px){
 
@@ -147,54 +208,70 @@ display:block;
 /* FRECCIA */
 
 .guest-arrow{
+
 width:60px;
 height:60px;
+
 top:66%;
 left:82%;
+
 }
 
 .guest-arrow svg{
+
 width:36px;
 height:36px;
+
 left:-3px;
+
 }
 
-/* SOCIAL ACCANTO LOGO DOUBLEEX */
+/* SOCIAL VICINO LOGO VIOLA */
 
 .social-icon img{
+
 width:46px;
 height:46px;
+
 }
 
 .instagram-icon{
-bottom:220px;
+
+bottom:55px;
 right:95px;
+
 }
 
 .facebook-icon{
-bottom:220px;
+
+bottom:55px;
 right:40px;
+
 }
 
-/* INDIRIZZO SOTTO LOGO DOUBLEEX */
+/* INDIRIZZO SOTTO I SOCIAL */
 
 .location-link{
 
-bottom:165px;
+bottom:10px;
+
 right:20px;
+
 left:auto;
 
 text-align:right;
 
-font-size:0.95rem;
+font-size:.9rem;
 
 display:flex;
+
 flex-direction:column;
+
 align-items:flex-end;
 
 }
 
-/* NASCONDI VERSIONE DESKTOP */
+/* NASCONDE DESKTOP */
 
 .desktop-address{
 display:none;
@@ -214,23 +291,38 @@ display:block;
 
 <div class="container">
 
-<img src="image/Ladispoli corretta.png"
+<!-- DESKTOP -->
+
+<img
+src="image/Ladispoli corretta.png"
 alt="Ladispoli Summer Sport"
 class="poster-desktop">
 
-<img src="image/ladispoli smart 10.png"
+<!-- MOBILE -->
+
+<img
+src="image/ladispoli smart 10.png"
 alt="Ladispoli Summer Sport Mobile"
 class="poster-mobile">
 
-<a href="gueststar.html" class="guest-arrow">
+<!-- FRECCIA -->
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<a
+href="gueststar.html"
+class="guest-arrow">
 
-<path d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
+<svg
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 24 24">
+
+<path
+d="M14.7 5.3a1 1 0 0 1 0 1.4L10.41 11H20a1 1 0 1 1 0 2h-9.59l4.3 4.3a1 1 0 0 1-1.42 1.4l-6-6a1 1 0 0 1 0-1.4l6-6a1 1 0 0 1 1.41 0z"/>
 
 </svg>
 
 </a>
+
+<!-- INDIRIZZO -->
 
 <a href="#" class="location-link">
 
@@ -245,20 +337,28 @@ Lungomare Regina Elena 148 (RM)
 
 </a>
 
-<a href="https://instagram.com/"
+<!-- INSTAGRAM -->
+
+<a
+href="https://instagram.com/"
 target="_blank"
 class="social-icon instagram-icon">
 
-<img src="image/insta-removebg-preview.png"
+<img
+src="image/insta-removebg-preview.png"
 alt="Instagram">
 
 </a>
 
-<a href="https://facebook.com/"
+<!-- FACEBOOK -->
+
+<a
+href="https://facebook.com/"
 target="_blank"
 class="social-icon facebook-icon">
 
-<img src="image/facebook.png"
+<img
+src="image/facebook.png"
 alt="Facebook">
 
 </a>
